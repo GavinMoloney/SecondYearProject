@@ -5,3 +5,6 @@ class HomePageView(TemplateView):
 
 class ContactPageView(TemplateView):
     template_name = 'contact.html'
+
+class AllProdCat(TemplateView):
+    template_name = 'category.html'
