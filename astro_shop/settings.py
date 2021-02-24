@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'shop',
     'accounts',
     'cart',
+    'order',
 
     #3rd party
     'stripe',
@@ -63,7 +64,9 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [str(BASE_DIR.joinpath('templates')),
-                 str(BASE_DIR.joinpath('cart','templates'))],
+                 str(BASE_DIR.joinpath('cart','templates')),
+                 str(BASE_DIR.joinpath('order','templates')),
+                 str(BASE_DIR.joinpath('accounts','templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -146,3 +149,7 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+STRIPE_SECRET_KEY = "sk_test_51IOT4PBouoDFjN4iSRyfW2p4DIZZp6aA37h3OP6kEYgdajOwLGt25aEzUAeS2cx1NxZvA7sVvUk92eJ7Y4X6UHrQ00UWvwmJXi"
+STRIPE_PUBLISHABLE_KEY = "pk_test_51IOT4PBouoDFjN4ilVFvns6QDMMLUQAsAzq0ShRUnePelqHFt29iwnrjCAm6tOTNFuyRRz1np1LUHWDVw6QWS4IF00VSApgA24"
