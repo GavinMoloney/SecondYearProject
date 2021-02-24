@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'pages',
     'shop',
     'accounts',
+    'cart',
 
     #3rd party
     'stripe',
@@ -61,7 +62,8 @@ ROOT_URLCONF = 'astro_shop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [str(BASE_DIR.joinpath('templates'))],
+        'DIRS': [str(BASE_DIR.joinpath('templates')),
+                 str(BASE_DIR.joinpath('cart','templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,6 +72,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'shop.context_processors.menu_links',
+                'cart.context_processors.counter',
             ],
         },
     },
