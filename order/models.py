@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
-from vouchers.models import Voucher
+from voucher.models import Voucher
 
 
 class Order(models.Model):

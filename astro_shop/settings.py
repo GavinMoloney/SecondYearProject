@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'cart',
     'order',
+    'voucher',
 
     #3rd party
     'stripe',

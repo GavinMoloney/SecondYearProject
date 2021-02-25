@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from shop.models import Product
 from .models import Cart, CartItem
-from vouchers.models import Voucher
-from vouchers.forms import VoucherApplyForm
+from voucher.models import Voucher
+from voucher.forms import VoucherApplyForm
 from django.core.exceptions import ObjectDoesNotExist
 from django.conf import settings
 import stripe
