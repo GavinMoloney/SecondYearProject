@@ -1,0 +1,27 @@
+{% extends "shop_base.html" %}
+{% load static %}
+{% block title %}Shop{% endblock title %}
+{% block content %}
+
+	<div>
+		<h1 >Our Products Collection</h1>
+		<p>Blah blah blah</p>
+	</div>
+
+	<div class="col-12">
+		<div class = "row mx-auto">
+			{% for category in menu_categories %}
+			<div class="col-lg-3 col-md-6 col-12">
+				<div class = "card-3 text-center h-100 " style="min-width:18rem">
+					<a href="{% url 'store:category_detail' category.slug %}"><img class ="card-img-top my_image" src="{{category.image.url}}" alt="{{category.name}}"></a>
+					<div class="card-footer ">
+						<h4>{{category.name}}</h4>
+
+					</div>
+				</div>
+			</div>
+			{% endfor %} 
+		</div>
+
+	</div>
+{% endblock %}

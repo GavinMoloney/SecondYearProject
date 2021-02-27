@@ -20,11 +20,14 @@ from django.conf.urls.static import static
 from accounts import views as user_views
 from django.views.generic.base import TemplateView
 
+
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('accounts.urls')),
-    path('shop', include('shop.urls')),
+    path('', include('accounts.urls')),    
     path('', include('pages.urls')),
+    path('store/', include('store.urls')),
     path('cart/', include('cart.urls')),
     path('order/', include('order.urls')),
     path('voucher/', include('voucher.urls', namespace='voucher')),

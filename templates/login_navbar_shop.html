@@ -1,0 +1,30 @@
+{% load static %}
+<nav class="navbar navbar-expand-sm justify-content-center mt-4">
+    <div class = "container-fluid">
+      <ul class="nav navbar-nav bounce">
+        <li class="nav-item"><a class="hoverable nav-link text-dark" href="{% url 'home' %}">Home</a></li>
+        <li class="nav-item"><a class="hoverable nav-link text-dark" href="{% url 'shop' %}">Shop</a></li>
+        <li class="nav-item"><a class="hoverable nav-link text-dark" href="{% url 'contact' %}">Contact</a></li>
+        {% if item_count > 0 %}
+        <li class="nav-item"><a class="nav-link text-dark" href="{% url 'cart:cart_detail' %}"><i class="fas fa-shopping-cart"></i>({{item_count}}</a></li>
+        {% endif %}
+      </ul>
+      
+      <ul class="nav navbar-nav bounce navbar-right mr-5">
+        {% if user.is_authenticated %}
+          <li class="nav-item dropdown hoverable">
+                <a href="#" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" 
+                >Welcome, {{ user.username }}</a>
+                       
+          <div class="dropdown-menu">
+            <a class="hoverable nav-link text-dark" href="{% url 'signout' %}">Sign Out <i class="fas fa-sign-out-alt"></i></a>                 
+          </div>
+        </li>
+        {% else %}
+        <li>
+          <a class="hoverable nav-link text-dark" href="{% url 'signin' %}">Sign In <i class="fas fa-sign-in-alt"></i></a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>    

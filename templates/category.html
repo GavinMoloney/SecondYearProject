@@ -1,60 +1,27 @@
-{% extends "base.html" %}
+{% extends "shop_base.html" %}
 {% load static %}
-{% block metadescription %}
-	{% if category %}
-		{{ category.description|truncatewords:155 }}
-	{% else %}
-		Welcome.
-	{% endif %}
-{% endblock %}
-{% block title %}
-	{% if category %}
-		{{ category.name }} - Astro Store
-	{% else %}
-		Astro Store
-	{% endif %}
-{% endblock %}
+{% block title %}Shop{% endblock title %}
 {% block content %}
-	<!--Breadcrumb navigation-->
-	{% if category %}
-		<div>
-			<div>
-				<p><a href="{% url 'shop:allProdCat' %}">Our Product Collection</a> | {{category.name}}</p>
-			</div>
-        </div>
-    {% endif %}
-	<div>
-	{% if category %}
-		<img src="{{category.image.url}}" alt="{{category.name}}">
-	</div>
-	<br>
-	<div>
-		<h1 >{{category.name}}</h1>
-		<p>{{category.description}}</p>
-    </div>
-    {% else %}
-		<img src="{% static 'images/banner.jpg' %}" alt="Our Products Collection">
-	</div>
-	<br>
+
 	<div>
 		<h1 >Our Products Collection</h1>
 		<p>Blah blah blah</p>
 	</div>
-    {% endif %}
-    <div>
-		<div>
-			{% for product in products %}
-				<div>
-					<div>
-						<a href="{{product.get_absolute_url}}"><img src="{{product.image.url}}" alt="{{product.name}}"></a>
-						<div>
-							<h4>{{product.name}}</h4>
-							<p>€{{product.price}}</p>
-						</div>
+
+	<div class="col-12">
+		<div class = "row mx-auto">
+			{% for category in links %}
+			<div class="col-lg-3 col-md-6 col-12">
+				<div class = "card-3 text-center h-100 " style="min-width:18rem">
+					<a href="{% url 'product_list' category.id %}"><img class ="card-img-top my_image" src="{{category.image.url}}" alt="{{category.name}}"></a>
+					<div class="card-footer ">
+						<h4>{{category.name}}</h4>
+
 					</div>
 				</div>
-			{% endfor %}
+			</div>
+			{% endfor %} 
 		</div>
-		<br>
+			
 	</div>
 {% endblock %}

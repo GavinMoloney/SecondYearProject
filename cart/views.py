@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from shop.models import Product
+from store.models import Product
 from .models import Cart, CartItem
 from voucher.models import Voucher
 from voucher.forms import VoucherApplyForm

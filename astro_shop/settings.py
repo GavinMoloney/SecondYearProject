@@ -38,11 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pages',
-    'shop',
     'accounts',
     'cart',
     'order',
     'voucher',
+    'store',
 
     #3rd party
     'stripe',
@@ -75,7 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'shop.context_processors.menu_links',
+                'store.context_processors.menu_categories',
                 'cart.context_processors.counter',
             ],
         },
