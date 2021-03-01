@@ -5,9 +5,6 @@
         <li class="nav-item"><a class="hoverable nav-link" href="{% url 'home' %}">Home</a></li>
         <li class="nav-item"><a class="hoverable nav-link" href="{% url 'shop' %}">Shop</a></li>
         <li class="nav-item"><a class="hoverable nav-link" href="{% url 'contact' %}">Contact</a></li>
-        {% if item_count > 0 %}
-        <li class="nav-item"><a class="nav-link" href="{% url 'cart:cart_detail' %}"><i class="fas fa-shopping-cart"></i>({{item_count}}</a></li>
-        {% endif %}
       </ul>
       
       <ul class="nav navbar-nav bounce navbar-right mr-5">
@@ -15,6 +12,7 @@
           <li class="nav-item dropdown hoverable">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" 
                 >Welcome, {{ user.username }}</a>
+                <li class="nav-item"><a class="nav-link" href="{% url 'cart:cart_detail' %}"><i class="fas fa-shopping-cart"></i>{{item_count}}</a></li>
                        
           <div class="dropdown-menu">
             <a class="hoverable nav-link" href="{% url 'signout' %}">Sign Out <i class="fas fa-sign-out-alt"></i></a>                 

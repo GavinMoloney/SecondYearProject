@@ -3,6 +3,10 @@ from django.db import models
 from django.urls import reverse
 
 class Category(models.Model):
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False)
     slug = models.SlugField(max_length=255)
     name = models.CharField(max_length=250, unique=True)
     description = models.TextField(blank=True)
@@ -20,6 +24,10 @@ class Category(models.Model):
         return self.name
 
 class Product(models.Model):
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False)
     slug = models.SlugField(max_length=255)
     name = models.CharField(max_length=250, unique=True)
     description = models.TextField(blank=True)

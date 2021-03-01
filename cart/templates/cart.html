@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "shop_base.html" %}
 {% load static %}
 {% block metadescription %}
 	This is the shopping cart page. Proceed to review your items and place the order.
@@ -16,7 +16,7 @@
 				</h1>
 				<br>
 				<p class="text-center">
-					Please click <a href="{% url 'shop:allProdCat' %}">here</a> to continue shopping.
+					Please click <a href="{% url 'shop' %}">here</a> to continue shopping.
 				</p>
 			</div>
 		</div>
@@ -91,15 +91,66 @@
 								Please review your shopping cart items before proceeding with the order payment.
 							</td>
 						</tr>
-						<tr>
-							<td class="text-left">
-								Your total is: <strong>£{{ total }}</strong>
-							</td>
-						</tr>
+						{% if voucher %}
+							<tr class="subtotal">
+							<td>Total</td>
+							<td colspan="4"></td>
+							<td class="num">€{{ total|floatformat:"2" }}</td>
+							</tr>
+							<tr>
+								<td>
+								"{{ voucher.code }}" voucher
+								({{ voucher.discount }}% off)
+								</td>
+								<td colspan="4"></td>
+								<td class="num neg">
+								- €{{ discount|floatformat:"2" }}
+								</td>
+							</tr>
+							<tr class="total">
+								<td>Total</td>
+								<td colspan="4"></td>
+								<td class="num">
+									€{{ new_total|floatformat:"2" }}
+								</td>
+							</tr>
+							{% else %}
+							<tr class="total">
+								<td>Total</td>
+								<td colspan="4"></td>
+								<td class="num">
+									€{{ total|floatformat:"2" }}
+								</td>
+							</tr>
+						{% endif %}
+					</tbody>
+				</table>
+				<p>Apply a voucher:</p>
+				<form action="{% url 'voucher:apply' %}" method="post">
+					{{ voucher_apply_form }}
+					<input type="submit" value="Apply">
+					{% csrf_token %}
+				</form>
+
 					</tbody>
 				</table>
 				<div class="mx-auto">
-					<a href="{% url 'shop:allProdCat' %}" class="btn btn-secondary btn-block my_custom_button">Continue Shopping</a>
+					<form action="" method="POST">
+						{% csrf_token %}
+							<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+						 data-key="{{ data_key }}"
+								 data-amount="{{ stripe_total }}"
+								 data-name="Perfect Cushion Shop"
+								 data-description="{{ description }}"
+								 data-image="{% static 'images/logo.png' %}"
+								 data-locale="auto"
+								 data-currency="eur"
+								 data-shipping-address="true"
+								 data-billing-address="true"
+								 data-zip-code="true">
+							 </script>
+						</form>						
+					<a href="{% url 'shop' %}" class="btn btn-secondary btn-block my_custom_button">Continue Shopping</a>
 				</div>
 			</div>
 		</div>
