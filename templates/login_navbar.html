@@ -11,9 +11,7 @@
         {% if user.is_authenticated %}
           <li class="nav-item dropdown hoverable">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" 
-                >Welcome, {{ user.username }}</a>
-                <li class="nav-item"><a class="nav-link" href="{% url 'cart:cart_detail' %}"><i class="fas fa-shopping-cart"></i>{{item_count}}</a></li>
-                       
+                >Welcome, {{ user.username }}</a>  
           <div class="dropdown-menu">
             <a class="hoverable nav-link" href="{% url 'signout' %}">Sign Out <i class="fas fa-sign-out-alt"></i></a>                 
           </div>
@@ -23,6 +21,7 @@
           <a class="hoverable nav-link" href="{% url 'signin' %}">Sign In <i class="fas fa-sign-in-alt"></i></a>
         </li>
         {% endif %}
+        <li class="nav-item"><a class="nav-link" href="{% url 'cart:cart_detail' %}"><i class="fas fa-shopping-cart"></i>{{item_count}}</a></li>
       </ul>
     </div>
   </nav>    
