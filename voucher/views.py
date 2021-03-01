@@ -6,12 +6,12 @@ from .forms import VoucherApplyForm
 
 def voucher_apply(request):
     now = timezone.now()
-    form = VoucherApplyForm(require_POST)
+    form = VoucherApplyForm(request.POST)
     if form.is_valid():
         code = form.cleaned_data['code']
         try:
-            voucher = Voucher.objects.get(code_iexact = code, valid_from_lte = now, valid_to__get =now, active=True)
-            request.sessions['voucher_id'] = voucher.id
+            voucher = Voucher.objects.get(code__iexact = code, valid_from__lte = now, valid_to__gte =now, active=True)
+            request.session['voucher_id'] = voucher.id
         except Voucher.DoesNotExist:
-            request.sessions['voucher_id'] = None
+            request.session['voucher_id'] = None
     return redirect('cart:cart_detail')
