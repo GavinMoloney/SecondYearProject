@@ -126,6 +126,7 @@
     max-height: 450px;
 }
 
-.red_col{
-    color: red;
+.prod_image img{
+    max-width: 450px;
+    max-height: 550px;
 }
