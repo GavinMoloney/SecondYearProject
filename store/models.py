@@ -11,6 +11,7 @@ class Category(models.Model):
     name = models.CharField(max_length=250, unique=True)
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to='category', blank=True)
+    image_secondary = models.ImageField(upload_to='category', blank=True)
 
     class Meta:
         ordering = ('name',)
@@ -30,6 +31,8 @@ class Product(models.Model):
         editable=False)
     slug = models.SlugField(max_length=255)
     name = models.CharField(max_length=250, unique=True)
+    make = models.CharField(max_length=250, null=True)
+    model = models.CharField(max_length=250, null=True)
     description = models.TextField(blank=True)
     category = models.ForeignKey(Category, related_name ='products', on_delete=models.SET_NULL, null=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)

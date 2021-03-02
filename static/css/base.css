@@ -121,4 +121,11 @@
 
 /* STORE RELATED */
 
+.category_image img{
+    max-width: 350px;
+    max-height: 450px;
+}
 
+.red_col{
+    color: red;
+}
