@@ -13,7 +13,8 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" 
                 >Welcome, {{ user.username }}</a>  
           <div class="dropdown-menu">
-            <a class="hoverable nav-link" href="{% url 'signout' %}">Sign Out <i class="fas fa-sign-out-alt"></i></a>                 
+            <a class="hoverable nav-link" href = "{% url 'order:order_history' %}" class = "dropdown-item">Order History</a>    
+            <a class="hoverable nav-link" href="{% url 'signout' %}">Sign Out <i class="fas fa-sign-out-alt"></i></a>      
           </div>
         </li>
         {% else %}

@@ -7,7 +7,7 @@
 	{{ product.name }} - INSERT COMPANY NAME HERE
 {% endblock %}
 {% block content %}
-	<div>
+<div class ="container pt-5">
 		<div>
 			<p><a href="{% url 'shop' %}">Home</a> | <a href="">{{product.category}}</a> | {{product.name}}</p>
 		</div>
@@ -16,7 +16,7 @@
 			<div>
 				<div>
 					<div>
-						<img src="{{product.image.url}}" alt="{{product.name}}">
+						<img src="{{product.image.url}}" alt="{{product.name}}" style = "max-height: 350px;">
 					</div>
 				</div>
 				<div>

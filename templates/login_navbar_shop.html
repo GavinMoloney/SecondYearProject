@@ -14,7 +14,8 @@
                 <a href="#" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" 
                 >Welcome, {{ user.username }}</a> 
           <div class="dropdown-menu">
-            <a class="hoverable nav-link text-dark" href="{% url 'signout' %}">Sign Out <i class="fas fa-sign-out-alt"></i></a>                 
+            <a class="hoverable nav-link text-dark" href = "{% url 'order:order_history' %}" class = "dropdown-item">Order History</a>   
+            <a class="hoverable nav-link text-dark" href="{% url 'signout' %}">Sign Out <i class="fas fa-sign-out-alt"></i></a>                
           </div>
         </li>
         {% else %}
@@ -22,7 +23,7 @@
           <a class="hoverable nav-link text-dark" href="{% url 'signin' %}">Sign In <i class="fas fa-sign-in-alt"></i></a>
         </li>
         {% endif %}
-        <li class="nav-item"><a class="nav-link" href="{% url 'cart:cart_detail' %}"><i class="fas fa-shopping-cart"></i>{{item_count}}</a></li>
+        <li class="nav-item"><a class="nav-link text-dark" href="{% url 'cart:cart_detail' %}"><i class="fas fa-shopping-cart"></i>{{item_count}}</a></li>
       </ul>
     </div>
   </nav>    

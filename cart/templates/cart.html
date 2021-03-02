@@ -8,10 +8,10 @@
 {% endblock %}
 {% block content %}
 	{% if not cart_items %}
-		<div>
+	<div class ="container pt-5">
 			<div class="text-center">
 				<br>
-				<h1 class="text-center my_title">
+				<h1 class="text-center">
 					Your shopping cart is empty
 				</h1>
 				<br>
@@ -24,7 +24,7 @@
 		<div>
 			<div class="text-center">
 				<br>
-				<h1 class="text-center my_title">
+				<h1 class="text-center">
 					Your shopping cart
 				</h1>
 				<br>
@@ -32,7 +32,7 @@
 		</div>
 		<div class="row mx-auto">
 			<div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
-				<table class="table my_custom_table">
+				<table class="table">
 					<thead class="my_custom_thead">
 						<tr>
 							<th colspan="5">
@@ -45,7 +45,7 @@
 						{% for cart_item in cart_items %}
 							<tr>
 								<td>
-									<a href="{{cart_item.product.get_url}}"><img src="{{cart_item.product.image.url}}" alt="" class="float-left rounded custom_image"></a>
+									<a href="{{cart_item.product.get_url}}"><img src="{{cart_item.product.image.url}}" alt="" class="float-left rounded custom_image" style = "max-height: 350px;"></a>
 								</td>
 								<td class="text-left">
 									{{cart_item.product.name}}
@@ -77,7 +77,7 @@
 				
 			</div>
 			<div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
-				<table class="table my_custom_table">
+				<table class="table">
 					<thead class="my_custom_thead">
 						<tr>
 							<th>
@@ -150,7 +150,7 @@
 								 data-zip-code="true">
 							 </script>
 						</form>						
-					<a href="{% url 'shop' %}" class="btn btn-secondary btn-block my_custom_button">Continue Shopping</a>
+					<a href="{% url 'shop' %}" class="btn btn-secondary btn-block">Continue Shopping</a>
 				</div>
 			</div>
 		</div>
