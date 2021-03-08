@@ -1,7 +1,26 @@
 {% extends 'base.html' %}
-{% block title %}AstroView Contact{% endblock title %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Contact us{% endblock title %}
 {% block content %}
+</br>
+  <h1>Contact Us</h1>
+  <form method="post">
+        {% csrf_token %}
+      {{ form|crispy }}
 
-<h1>Contact Page</h1>
+      <button class="button button1" style="vertical-align:middle" type="submit"><span> Send </span></button>
+</form>
 
+</br></br></br>
+<div>
+<p>Astronomy Shop</p>
+<p>Unit 412</p>
+<p>Broomhill Industrial Estate</p>
+<p>Tallaght</p>
+<p>Dublin</p>
+<p>tel: 0123456789</p>
+<p>email: info@astronomy-shop.ie</p>
+</div>
+</br></br></br>
 {% endblock content %}

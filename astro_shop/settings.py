@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'order',
     'voucher',
     'store',
+    'contact_us',
 
     #3rd party
     'stripe',
@@ -151,6 +152,13 @@ LOGOUT_REDIRECT_URL = 'home'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'astronomyproject28@gmail.com'
+EMAIL_HOST_PASSWORD = 'kamel123456'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 
 STRIPE_SECRET_KEY = "sk_test_51IOT4PBouoDFjN4iSRyfW2p4DIZZp6aA37h3OP6kEYgdajOwLGt25aEzUAeS2cx1NxZvA7sVvUk92eJ7Y4X6UHrQ00UWvwmJXi"
 STRIPE_PUBLISHABLE_KEY = "pk_test_51IOT4PBouoDFjN4ilVFvns6QDMMLUQAsAzq0ShRUnePelqHFt29iwnrjCAm6tOTNFuyRRz1np1LUHWDVw6QWS4IF00VSApgA24"
