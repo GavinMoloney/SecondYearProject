@@ -1,3 +1,4 @@
 stripe
 pillow
 crispy-forms
+sendgrid (pip install django sendgrid)
