@@ -19,6 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from accounts import views as user_views
 from django.views.generic.base import TemplateView
+from newsletter import views
 
 
 
@@ -32,4 +33,8 @@ urlpatterns = [
     path('order/', include('order.urls')),
     path('voucher/', include('voucher.urls', namespace='voucher')),
     path('contact', include('contact_us.urls')),
+    path('new/', views.new, name='new'),
+    path('confirm/', views.confirm, name='confirm'),
+    path('delete/', views.delete, name='delete'),
+    #path('newsletter/', include('newsletter.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

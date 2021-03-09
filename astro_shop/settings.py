@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'voucher',
     'store',
     'contact_us',
+    'newsletter',
 
     #3rd party
     'stripe',
@@ -162,3 +163,6 @@ EMAIL_USE_SSL = False
 
 STRIPE_SECRET_KEY = "sk_test_51IOT4PBouoDFjN4iSRyfW2p4DIZZp6aA37h3OP6kEYgdajOwLGt25aEzUAeS2cx1NxZvA7sVvUk92eJ7Y4X6UHrQ00UWvwmJXi"
 STRIPE_PUBLISHABLE_KEY = "pk_test_51IOT4PBouoDFjN4ilVFvns6QDMMLUQAsAzq0ShRUnePelqHFt29iwnrjCAm6tOTNFuyRRz1np1LUHWDVw6QWS4IF00VSApgA24"
+
+FROM_EMAIL = 'x00166625@mytudublin.ie'
+SENDGRID_API_KEY = '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'
