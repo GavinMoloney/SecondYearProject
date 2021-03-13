@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/base1.css' %}">
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+          <h2 class="account-heading"> {{ user.username }}</h2>
+          <h5> Email: {{ user.email }}</h5>
+          <h5>Role:  {{ user.profile.Role }}</h5>
+          <h5>Mobile Number: {{ user.profile.number }}</h5>
+          <h5 > Last Login:  {{user.last_login}}</h5>
+        </div>
+      </div>
+    </div>
+{% endblock content %}

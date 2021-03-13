@@ -39,3 +39,7 @@ def signinView(request):
 def signoutView(request):
     logout(request)
     return redirect('home')
+
+
+def profile(request):
+    return render(request, 'profile.html')
