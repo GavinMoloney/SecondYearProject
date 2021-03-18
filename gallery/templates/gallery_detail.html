@@ -2,35 +2,19 @@
 {% block title %}View Your picture{% endblock title %}
 {% block content %}
 </br></br>
-    <div class = "card">
-      <div class="card-header text-white bg-dark" style="background-color: #A9A9A9;">
-        <span class="font-weight-bold">{{ picture.make }} {{ picture.model }}</span> 
-        <span class="text-black ">Posted by {{ picture.author }} | {{ picture.date }}</span>
-      </div>
-      <div class = "row">
-        <div class = "col-md-8 px-3">
-          <div class="card-block px-3 py-2">
-            {% if bike.picture %}
-            <img class = " card-img-top" src = "{{picture.image.url}}" alt = "{{picture.title}}">
-            {% endif %}
-          </div> 
-        </div>
-
-        <div class = "col-md-4">
-        </br>
-          <p class="card-text">Title: {{picture.title}}</p>
-
-        </br>
-        </div>
-
-      </div>
+<div class = "card text-center h-100 ">
+    
+    <img class ="card-img-top" src="{{userskypicture.image.url}}" alt="{{picture.title}}">
+    
+    <div class="card-footer ">
+        <h4>{{userskypicture.title}}</h4>
     </div>
    <div class="card-footer text-center text-muted">
-    {% if user.is_authenticated and user.id == picture.author_id %}
-    <a href="{% url 'gallery_edit' picture.pk %}">Edit</a> |
-    <a href="{% url 'gallery_delete' picture.pk %}">Delete</a> 
+    {% if user.is_authenticated and user.id == userskypicture.author_id %}
+    <a href="{% url 'gallery_edit' userskypicture.pk %}">Edit</a> |
+    <a href="{% url 'gallery_delete' userskypicture.pk %}">Delete</a> 
     {% endif %}
   <a href="{% url 'gallery' %}" class="btn btn-link" >Back to gallery</a></p>
+</br></br></br></br></br></br>
   </div>
-</br></br></br></br></br></br></br></br>
  {% endblock content %}

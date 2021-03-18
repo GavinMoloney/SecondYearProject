@@ -17,7 +17,7 @@ class GalleryUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = UserSkyPicture
     fields = ('title', 'location', 'description', 'date_created', 'image')
     template_name = 'gallery_edit.html'
-    success_url = reverse_lazy('gallery')
+
 
     def test_func(self):
         obj = self.get_object()
@@ -56,8 +56,8 @@ def image_upload_view(request):
             form.save()
             # Get the current instance object to display in the template
             img_obj = form.instance
-            return render(request, 'gallery.html', {'form': form, 'img_obj': img_obj})
+            return render(request, 'gallery_detail.html', {'form': form, 'img_obj': img_obj})
     else:
         form = UserGalleryImageUpload()
-    return render(request, 'gallery.html', {'form': form})
+    return render(request, 'gallery_detail.html', {'form': form})
 

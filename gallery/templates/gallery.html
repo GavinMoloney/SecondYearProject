@@ -21,7 +21,7 @@
 					<img class ="card-img-top" src="{{picture.image.url}}" alt="{{picture.title}}">
                     {% endif %}
 					<div class="card-footer ">
-						<h4>{{picture.title}}</h4>
+						<a href="{{picture.get_absolute_url}}" ><h4>{{picture.title}}</h4></a>
 					</div>
                     <div class="card-footer text-center text-muted">
                         {% if user.is_authenticated and user.id == picture.author_id %}
