@@ -5,9 +5,9 @@ from .views import GalleryUpdateView, GalleryCreateView, GalleryDeleteView, Gall
 
 
 urlpatterns = [
-    path('/<uuid:pk>/delete/', GalleryDeleteView.as_view(), name='gallery_delete'),
-    path('/<uuid:pk>/edit/', GalleryUpdateView.as_view(), name='gallery_edit'),
-    path('/new/', GalleryCreateView.as_view(), name='gallery_upload'),
-    path('/<uuid:pk>', GalleryDetailView.as_view(), name = 'gallery_detail'),
+    path('<uuid:pk>/delete/', GalleryDeleteView.as_view(), name='gallery_delete'),
+    path('<uuid:pk>/edit/', GalleryUpdateView.as_view(), name='gallery_edit'),
+    path('upload_image/', GalleryCreateView.as_view(), name='gallery_upload'),
+    path('<uuid:pk>', GalleryDetailView.as_view(), name = 'gallery_detail'),
     path('', GalleryListView.as_view(), name = 'gallery'),
 ]
