@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Gallery{% endblock title %}
+{% block content %}
+
+<div class ="container pt-5">
+	<div class = "text-white">
+		<h1 >Our Gallery</h1>
+        {% if user.is_authenticated %}
+		    <p>Share your magnificent pictures with us <a class="btn btn-link" style="vertical-align:middle" href="{% url 'gallery_upload' %}">Upload your picture</a></p>
+        </br></br>
+        {% endif %}
+	</div>
+
+	<div class="col-12">
+		<div class="row">
+			{% for picture in gallery_items %}
+			<div class="col-lg-4 col-md-6 col-12 my-3">
+				<div class = "card text-center h-100 ">
+                    {% if picture.image %}
+					<img class ="card-img-top" src="{{picture.image.url}}" alt="{{picture.title}}">
+                    {% endif %}
+					<div class="card-footer ">
+						<h4>{{picture.title}}</h4>
+					</div>
+                    <div class="card-footer text-center text-muted">
+                        {% if user.is_authenticated and user.id == picture.author_id %}
+                        <a href="{% url 'gallery_edit' picture.pk %}">Edit</a> |
+                        <a href="{% url 'gallery_delete' picture.pk %}">Delete</a> 
+                        {% endif %}
+                    </div>
+				</div>
+			</div>
+			{% endfor %} 
+		</div>
+	</div>
+</div>
+{% endblock %}

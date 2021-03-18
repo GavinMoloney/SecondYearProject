@@ -10,6 +10,10 @@ class HomePageView(TemplateView):
 class ContactPageView(TemplateView):
     template_name = 'contact.html'
 
+class GalleryPageView(TemplateView):
+    template_name = 'gallery.html'
+
+
 def shop_page(request):
     categories = Category.objects.all()
 
