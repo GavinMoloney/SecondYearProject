@@ -24,7 +24,6 @@ from accounts import views as user_views
 
 
 
-
 urlpatterns = [
     path('accounts/', include ('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
@@ -40,5 +39,6 @@ urlpatterns = [
     path('confirm/', views.confirm, name='confirm'),
     path('delete/', views.delete, name='delete'),
     path('gallery', include('gallery.urls')),
+    path('search/', include('search_app.urls')),
     #path('newsletter/', include('newsletter.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

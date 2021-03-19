@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'contact_us',
     'newsletter',
     'gallery',
+    'search_app',
 
     #3rd party
     'stripe',
@@ -71,7 +72,8 @@ TEMPLATES = [
                  str(BASE_DIR.joinpath('cart','templates')),
                  str(BASE_DIR.joinpath('order','templates')),
                  str(BASE_DIR.joinpath('accounts','templates')),
-                 str(BASE_DIR.joinpath('gallery','templates'))],
+                 str(BASE_DIR.joinpath('gallery','templates')),
+                 str(BASE_DIR.joinpath('search_app', 'templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
