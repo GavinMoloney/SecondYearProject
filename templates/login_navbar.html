@@ -12,7 +12,7 @@
       <ul class="nav navbar-nav bounce navbar-right mr-5">
         {% if user.is_authenticated %}
           {% if user.profile.image %}
-          <a><img class="rounded-circle account-img" src="{{ user.profile.image.url }}" style="width: 10%; float:right"> </a>  
+            <a><img class="rounded-circle account-img" src="{{ user.profile.image.url }}" style="width: 10%; float:right"> </a>  
           {% endif %}
           <li class="nav-item dropdown hoverable">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" 

@@ -4,5 +4,5 @@ urlpatterns = [
     path('contact/', ContactPageView.as_view(), name='contact'),
     path('', HomePageView.as_view(), name='home'),
     path('shop/', shop_page, name = 'shop'),
-    path('gallery/', GalleryPageView.as_view(), name = 'gallery'),
+    path('', GalleryPageView.as_view(), name = 'gallery'),
 ]

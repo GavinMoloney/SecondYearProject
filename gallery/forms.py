@@ -1,8 +1,8 @@
 from django import forms
-from .models import UserSkyPicture
+from .models import Picture
 
 class UserGalleryImageUpload(forms.Form):
 
     class Meta:
-        model = UserSkyPicture
+        model = Picture
         fields = ['title', 'location', 'description', 'date_created', 'image']

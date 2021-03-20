@@ -1,20 +1,33 @@
-from django.shortcuts import render, redirect
-from django.urls import reverse_lazy
+from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
-from .models import UserSkyPicture
+from .models import Picture, Votes
 from .forms import UserGalleryImageUpload
+from django.http import HttpResponseRedirect
  
 
-class GalleryListView(ListView):
-    model = UserSkyPicture
-    context_object_name = 'gallery_items'
-    template_name = 'gallery.html'
+
+
+def gallery_view(request):
+    pictures = Picture.objects.all()
+    context = {
+        'Gallery_Pictures': pictures
+    }
+
+    return render(request, 'gallery.html', context)
+
+
+# class GalleryListView(ListView):
+#     print("in gal view")
+#     model = UserSkyPicture
+#     context_object_name = 'gallery_items'
+#     template_name = 'gallery.html'
 
 
 class GalleryUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-    model = UserSkyPicture
+    model = Picture
     fields = ('title', 'location', 'description', 'date_created', 'image')
     template_name = 'gallery_edit.html'
 
@@ -24,12 +37,12 @@ class GalleryUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return obj.author == self.request.user
 
 class GalleryDetailView(DetailView):
-    model = UserSkyPicture
+    model = Picture
     template_name = 'gallery_detail.html'
 
 
 class GalleryDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-    model = UserSkyPicture
+    model = Picture
     template_name = 'gallery_delete.html'
     success_url = reverse_lazy('gallery')
     
@@ -39,7 +52,7 @@ class GalleryDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 class GalleryCreateView(LoginRequiredMixin, CreateView):
-    model = UserSkyPicture
+    model = Picture
     fields = ('title', 'location', 'description', 'date_created', 'image')
     template_name = 'gallery_upload.html'
 
@@ -61,3 +74,14 @@ def image_upload_view(request):
         form = UserGalleryImageUpload()
     return render(request, 'gallery_detail.html', {'form': form})
 
+
+
+def vote_add(request, pk):
+    picture = get_object_or_404(Picture, id = pk)
+    user = request.user    
+    if request.method == "POST":
+        vote = Votes.objects.create(voted_by= request.user, voted_picture = picture) 
+        if vote.voted_by != user:
+            picture.add_total_vote()      
+
+    return redirect('gallery')
