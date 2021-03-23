@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, PictureUploadForm
 from .models import CustomUser
 from django.contrib.auth.models import Group
 from django.contrib.auth.forms import AuthenticationForm
@@ -40,6 +40,19 @@ def signoutView(request):
     logout(request)
     return redirect('home')
 
-
+    
 def profile(request):
     return render(request, 'profile.html')
+
+def update_profile(request):    
+    user = request.user.profile
+    form = PictureUploadForm(instance = user)
+    if request.method == 'POST':
+        form = PictureUploadForm(request.POST, request.FILES, instance = user)
+        if form.is_valid():        
+            form.save()
+            img_obj = form.instance
+            return render(request, 'profile.html', {'form': form, 'img_obj': img_obj})
+    else:
+        form = PictureUploadForm()
+    return render(request, 'update_profile.html', {'form': form})

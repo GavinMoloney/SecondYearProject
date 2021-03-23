@@ -3,6 +3,8 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/base1.css' %}">
+
+</div>
     <div class="content-section">
       <div class="media">
         <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
@@ -12,7 +14,9 @@
           <h5>Role:  {{ user.profile.Role }}</h5>
           <h5>Mobile Number: {{ user.profile.number }}</h5>
           <h5 > Last Login:  {{user.last_login}}</h5>
-        </div>
+        </br>
+          <p><a class="btn btn-link" style="vertical-align:middle" href="{% url 'update_profile' %}">Update Your Profile</a></p>
+      </div>
       </div>
     </div>
 {% endblock content %}
