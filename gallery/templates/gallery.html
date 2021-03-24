@@ -40,8 +40,9 @@
 									<button type="submit" class="btn btn-secondary">Vote up</button>
 									{% csrf_token %}
 								</form>	
-								Total votes: {{ picture.total_votes}}
+								
 							{% endif %}	
+							Total votes: {{ picture.total_votes}}
 						{% endif %}		
                     </div>
 				</div>
