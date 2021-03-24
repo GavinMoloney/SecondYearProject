@@ -11,9 +11,9 @@
       
       <ul class="nav navbar-nav bounce navbar-right mr-5">
         {% if user.is_authenticated %}
-          {% if user.profile.image %}
-          {% endif %}
+          {% if user.profile.image %}         
           <img class="rounded-circle account-img " src="{{ user.profile.image.url }}" style="width: 10%">
+          {% endif %}
           <li class="nav-item dropdown hoverable">
                 <a href="#" class="nav-link dropdown-toggle " data-toggle="dropdown" 
                 >Welcome, {{ user.username }}</a>

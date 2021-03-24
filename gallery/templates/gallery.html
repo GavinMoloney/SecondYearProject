@@ -28,15 +28,18 @@
 							<a href="{% url 'gallery_edit' picture.pk %}">Edit</a> |
 							<a href="{% url 'gallery_delete' picture.pk %}">Delete</a> 
                         {% endif %}
-						{% if user.is_authenticated %}
-							
-								<form method="POST" action ="{% url 'up_vote' picture.pk %}">
+						
+																				
+								<form method="POST" action ="{% url 'up_vote' picture.pk %}">									
 									<button type="submit" class="btn btn-secondary">Vote up</button>
 									{% csrf_token %}
+								</form>	
+							
+								<form method="POST" action ="{% url 'down_vote' picture.pk %}">
+									<button type="submit" class="btn btn-secondary">Vote down</button>
+									{% csrf_token %}
 								</form>
-								Total votes: {{ picture.total_votes }}
-
-						{% endif %}
+						
                     </div>
 				</div>
 			</div>

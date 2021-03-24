@@ -77,11 +77,31 @@ def image_upload_view(request):
 
 
 def vote_add(request, pk):
+    print("in up")
     picture = get_object_or_404(Picture, id = pk)
-    user = request.user    
+    user = request.user        
     if request.method == "POST":
-        vote = Votes.objects.create(voted_by= request.user, voted_picture = picture) 
-        if vote.voted_by != user:
-            picture.add_total_vote()      
+        print("in post")
+        v_e = Picture.objects.filter(id = pk, voted_by=user).exists()
+        print("got pic")
+        print(v_e)
+        if v_e == False:
+            print("in working part")
+            vote = Votes.objects.create(voted_picture = picture) 
+            picture.add_total_vote()  
+            picture.voted_by.add(user)  
+            picture.save()
+    return redirect('gallery')
 
+
+def vote_remove(request, pk):
+    print("in del")
+    picture = get_object_or_404(Picture, id = pk)
+    user = request.user        
+    if request.method == "POST":
+        print("del shoud be here")
+        picture.sub_votes()  
+        Votes.objects.get(voted_picture= picture).delete() 
+        picture.voted_by.remove(user)
+        picture.save()
     return redirect('gallery')

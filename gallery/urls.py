@@ -11,4 +11,5 @@ urlpatterns = [
     path('<uuid:pk>/', GalleryDetailView.as_view(), name = 'gallery_detail'),
     path('', views.gallery_view, name = 'gallery'),
     path('<uuid:pk>', views.vote_add, name='up_vote'),
+    path('<uuid:pk>', views.vote_remove, name='down_vote'),
 ]

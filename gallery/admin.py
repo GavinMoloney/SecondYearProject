@@ -3,7 +3,7 @@ from .models import Picture, Votes
 
 
 class UserSkyPictureAdmin(admin.ModelAdmin):
-    list_display = ['title', 'date_created', 'total_votes', 'votes_this_month']
+    list_display = ['title', 'date_created', 'total_votes', 'votes_this_month', 'get_voter']
     list_per_page = 50
 
 
