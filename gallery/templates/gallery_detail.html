@@ -4,15 +4,15 @@
 </br></br>
 <div class = "card text-center h-100 ">
     
-    <img class ="card-img-top" src="{{userskypicture.image.url}}" alt="{{picture.title}}">
+    <img class ="card-img-top" src="{{picture.image.url}}" alt="{{picture.title}}">
     
     <div class="card-footer ">
-        <h4>{{userskypicture.title}}</h4>
+        <h4>{{picture.title}}</h4>
     </div>
    <div class="card-footer text-center text-muted">
-    {% if user.is_authenticated and user.id == userskypicture.author_id %}
-    <a href="{% url 'gallery_edit' userskypicture.pk %}">Edit</a> |
-    <a href="{% url 'gallery_delete' userskypicture.pk %}">Delete</a> 
+    {% if user.is_authenticated and user.id == picture.author_id %}
+    <a href="{% url 'gallery_edit' picture.pk %}">Edit</a> |
+    <a href="{% url 'gallery_delete' picture.pk %}">Delete</a> 
     {% endif %}
   <a href="{% url 'gallery' %}" class="btn btn-link" >Back to gallery</a></p>
 </br></br></br></br></br></br>
