@@ -9,9 +9,9 @@ class CustomUser(AbstractUser):
 
 class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    Role = models.TextField(blank=True)
-    number = models.IntegerField()
-    image = models.ImageField(default = 'default.jpg', upload_to = 'profile_pics')
+    role = models.TextField(blank=True)
+    mobile = models.IntegerField(blank=True, null=True)
+    image = models.ImageField(default = 'default.png', upload_to = 'profile_pics', blank=True)
 
 
     def __str__(self):

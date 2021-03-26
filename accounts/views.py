@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
 from .forms import CustomUserCreationForm, PictureUploadForm
-from .models import CustomUser
+from .models import CustomUser, Profile
 from django.contrib.auth.models import Group
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 
+from django.contrib import messages
 
 def signupView(request):
     if request.method == 'POST':
@@ -13,8 +14,10 @@ def signupView(request):
             form.save()
             username = form.cleaned_data.get('username')
             signup_user = CustomUser.objects.get(username = username)
+            user= CustomUser.objects.get(username= signup_user)
             customer_group = Group.objects.get(name = 'Customer')
             customer_group.user_set.add(signup_user)
+            profile = Profile.objects.create(user=user)
     else:
         form = CustomUserCreationForm()
     return render(request, 'signup.html', {'form':form})
@@ -27,6 +30,7 @@ def signinView(request):
             username = request.POST['username']
             password = request.POST['password']
             user = authenticate(username = username, password = password)
+            messages.success(request, 'Welcome back '+ username  +'😊')
             if user is not None:
                 login(request, user)
                 return redirect('home')
@@ -49,7 +53,8 @@ def update_profile(request):
     form = PictureUploadForm(instance = user)
     if request.method == 'POST':
         form = PictureUploadForm(request.POST, request.FILES, instance = user)
-        if form.is_valid():        
+        if form.is_valid():
+            messages.success(request, 'Your profile is updated successfully!')
             form.save()
             img_obj = form.instance
             return render(request, 'profile.html', {'form': form, 'img_obj': img_obj})

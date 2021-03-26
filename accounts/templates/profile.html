@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+
 {% block content %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/base1.css' %}">
@@ -11,12 +12,20 @@
         <div class="media-body">
           <h2 class="account-heading"> {{ user.username }}</h2>
           <h5> Email: {{ user.email }}</h5>
-          <h5>Role:  {{ user.profile.Role }}</h5>
-          <h5>Mobile Number: {{ user.profile.number }}</h5>
+          <h5>Role:  {{ user.profile.role }}</h5>
+          <h5>Mobile Number: {{ user.profile.mobile }}</h5>
           <h5 > Last Login:  {{user.last_login}}</h5>
         </br>
           <p><a class="btn btn-link" style="vertical-align:middle" href="{% url 'update_profile' %}">Update Your Profile</a></p>
       </div>
       </div>
     </div>
+    <script>
+      setTimeout(function(){
+        if ($('#msg').length > 0) {
+          $('#msg').remove();
+        }
+      }, 2000)
+    </script>
+    {% include 'messages.html' %}
 {% endblock content %}
