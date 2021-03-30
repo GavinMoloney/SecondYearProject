@@ -53,13 +53,10 @@ class Picture(models.Model):
 
 
 class PictureOfTheMonth(models.Model):
-    picture_of_month = models.OneToOneField(Picture, on_delete= models.SET_NULL, null = True, related_name='pic', related_query_name='pics')
+    picture_of_month = models.OneToOneField(Picture, on_delete= models.SET_NULL, null = True)
     votes = models.IntegerField(default = 0, blank = True, null = True)
 
     
     class Meta:
         verbose_name = 'Picture of the month gallery'
         verbose_name_plural = 'Pictures of the month gallery'
-
-    # def __str__(self):
-    #     return self.picture_of_month

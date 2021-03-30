@@ -28,15 +28,6 @@ def pic_of_the_month_gallery_view(request):
     return render(request, 'gallery_of_the_month.html', context)
 
 
-
-
-# class GalleryListView(ListView):
-#     print("in gal view")
-#     model = UserSkyPicture
-#     context_object_name = 'gallery_items'
-#     template_name = 'gallery.html'
-
-
 class GalleryUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Picture
     fields = ('title', 'location', 'description', 'date_created', 'image')
@@ -88,28 +79,22 @@ def image_upload_view(request):
 
 
 def vote_add(request, pk):
-    # print("in up")
     picture = get_object_or_404(Picture, id = pk)
     user = request.user        
     if request.method == "POST":
-        # print("in post")
         v_e = Picture.objects.filter(id = pk, voted_by=user).exists()
-        # print("got pic")
-        # print(v_e)
         if v_e == False:
-            # print("in working part")
             picture.add_total_vote()  
             picture.voted_by.add(user)  
             picture.save()
     return redirect('gallery')
 
 
+
 def vote_remove(request, pk):
-    # print("in del")
     picture = get_object_or_404(Picture, id = pk)
     user = request.user        
     if request.method == "POST":
-        # print("del shoud be here")
         picture.sub_votes()  
         picture.voted_by.remove(user)
         picture.save()
@@ -136,6 +121,7 @@ def add_to_gallery_of_the_month(request):
   
  
     # winner is selected from remaining pictures, based on votes last month
+    # if two pictures had the same vote count, hard luck we choose first one we find
     most_voted = pictures.filter(votes_this_month=max_votes).first()
 
     # if max_votes == 0, it means that all pictures have been removed from querry set above, 
