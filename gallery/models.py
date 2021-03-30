@@ -34,6 +34,14 @@ class Picture(models.Model):
         self.total_votes = self.total_votes - 1
         self.save()
 
+    def add_month_votes(self):
+        self.votes_this_month += 1
+        self.save()
+
+    def zero_month_votes(self):
+        self.votes_this_month = 0
+        self.save()
+
     def get_voter(self):
         return ",".join([str(v) for v in self.voted_by.all()])
         
@@ -43,16 +51,15 @@ class Picture(models.Model):
         verbose_name_plural = 'Gallery Pictures'
 
 
-class Votes(models.Model):
-    vote_date = models.DateField(auto_now_add = True)
-    voted_picture = models.ForeignKey(Picture, on_delete = models.CASCADE, related_name='vote_pic')
-
-    class Meta:
-        verbose_name = 'Votes'
-        verbose_name_plural = 'Votes'
-
-
-
 
 class PictureOfTheMonth(models.Model):
-    pic_of_the_month = models.ForeignKey(Picture, on_delete = models.CASCADE, related_name='pic_of_month')
+    picture_of_month = models.OneToOneField(Picture, on_delete= models.SET_NULL, null = True, related_name='pic', related_query_name='pics')
+    votes = models.IntegerField(default = 0, blank = True, null = True)
+
+    
+    class Meta:
+        verbose_name = 'Picture of the month gallery'
+        verbose_name_plural = 'Pictures of the month gallery'
+
+    # def __str__(self):
+    #     return self.picture_of_month

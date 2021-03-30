@@ -1,16 +1,15 @@
 from django.contrib import admin
-from .models import Picture, Votes
-
+from .models import Picture, PictureOfTheMonth
 
 class UserSkyPictureAdmin(admin.ModelAdmin):
-    list_display = ['title', 'date_created', 'total_votes', 'votes_this_month', 'get_voter']
+    list_display = ['title', 'total_votes', 'votes_this_month', 'get_voter']
     list_per_page = 50
 
 
-class UserVote(admin.ModelAdmin):
-    list_display = ['vote_date', 'voted_picture']
-    list_per_page = 50
+class PictureOfTheMonthAdmin(admin.ModelAdmin):
+    list_display = ['picture_of_month', 'votes']
+
 
 
 admin.site.register(Picture, UserSkyPictureAdmin)
-admin.site.register(Votes, UserVote)
+admin.site.register(PictureOfTheMonth, PictureOfTheMonthAdmin)

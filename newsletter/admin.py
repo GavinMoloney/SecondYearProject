@@ -13,4 +13,4 @@ class NewsletterAdmin(admin.ModelAdmin):
     actions = [send_newsletter]
 
 admin.site.register(Subscriber)
-admin.site.register(Newsletter)
+admin.site.register(Newsletter, NewsletterAdmin)

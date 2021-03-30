@@ -9,10 +9,10 @@
         <li class="nav-item"><a class="hoverable nav-link" href="{% url 'new' %}">Newsletter</a></li>
       </ul>
       
-      <ul class="nav navbar-nav bounce navbar-right mr-5">
+      <ul class="nav navbar-nav bounce navbar-right ">
         {% if user.is_authenticated %}
           {% if user.profile.image %}         
-          <img class="rounded-circle account-img " src="{{ user.profile.image.url }}" style="width: 10%">
+              <img class="rounded-circle account-img " src="{{ user.profile.image.url }}" style="width: 10%">
           {% endif %}
           <li class="nav-item dropdown hoverable">
                 <a href="#" class="nav-link dropdown-toggle " data-toggle="dropdown" 
