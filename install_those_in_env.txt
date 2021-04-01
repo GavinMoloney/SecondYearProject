@@ -2,3 +2,4 @@ stripe
 pillow
 crispy-forms
 sendgrid
+django-cookie-law
