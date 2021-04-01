@@ -1,14 +1,19 @@
 h1{
+    text-align: center;
     color: white;
     padding-left: 20px;
 }
 
 .container{
+    border-radius: 5px;
+     background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
     size: 20px;
     color: white;
     border-radius: 5px;
     padding: 20px;
-    float: left;
+
 
 }
 .container .button{

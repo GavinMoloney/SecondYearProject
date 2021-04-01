@@ -9,7 +9,7 @@
 }
 
 .footer{
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -131,3 +131,19 @@
     max-height: 550px;
 }
 
+
+
+h1{
+    text-align: center;
+    color: white;
+    padding-left: 20px;
+}
+
+
+.footer {
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    background-color: tomato;
+}
