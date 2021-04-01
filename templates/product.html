@@ -6,8 +6,10 @@
 {% block title %}{{ product.name }} {% endblock %}
 {% block content %}
 <div class="container pt-5">
-	<div>
-		<p><a href="{% url 'shop' %}">Home</a> | <a href="">{{product.category}}</a> | {{product.name}}</p>
+	<div class="row my_row_class">
+		<div class = "mx-auto">
+		<p><a href="{% url 'shop' %}">Shop Home</a> | <a href="{% url 'store:category_detail' product.category.slug %}">Back</a> | {{product.name}}</p>
+	</div>	
 	</div>
 	<div>
 		<br>

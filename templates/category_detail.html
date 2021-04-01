@@ -4,6 +4,11 @@
 {% block content %}
 
 <div class ="container pt-5">
+	<div class="row my_row_class">
+		<div class = "mx-auto">
+		<p><a href="{% url 'shop' %}">Shop Home</a> 
+	</div>	
+	</div>
 	<div class = "row">
 		<div class="col-4 category_image">
 			{% if category.image_secondary %}
@@ -17,7 +22,9 @@
 			</div>
 		</div>
 	</div>
+	<!-- 
     <a href="{{request.META.HTTP_REFERER}}">Go back</a>
+	-->
     <br>
 
 		<div class="row">
@@ -31,6 +38,18 @@
 				</div>
 			</div>
 			{% endfor %} 
-		</div>		
+		</div>	
+		<div class="mx-auto">
+			{% if products.paginator.num_pages > 1 %}
+				<hr>
+				<div class="text-center">
+					{% for pg in products.paginator.page_range %}
+					<a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.number == pg %}active{% endif %}">{{pg}}
+					</a>
+					{% endfor %}
+				</div>
+			{% endif %}
+		</div>
+		<br>	
 </div>
 {% endblock %}
