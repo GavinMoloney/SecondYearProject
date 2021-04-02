@@ -8,3 +8,51 @@ h5 {
 h6 {
     color: black;
 }
+
+.content-section .button{
+    background-color: rgb(1, 138, 1); 
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.content-section .button1 {
+    color: black; 
+    border: rgb(20, 20, 20);
+    border-radius: 10px; 
+}
+  
+.button1:hover {
+    background-color: rgb(5, 144, 5);
+    color: white;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+  
+.button span:after {
+    content: ' 💬';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -50px;
+    transition: 0.5s;
+}
+  
+.button:hover span {
+    padding-right: 25px;
+}
+  
+.button:hover span:after {
+    opacity: 1;
+    right: 0;

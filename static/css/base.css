@@ -7,9 +7,9 @@
     background-size: cover;
     position: relative;
 }
-
+/*
 .footer{
-    position: absolute;
+    position: sticky;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -17,7 +17,7 @@
     color: white;
     height: 5vh;
 }
-  
+*/
 .dark-mode {
     background-color: black;
     color: white;
@@ -133,29 +133,28 @@
 
 
 
-h1{
-    text-align: center;
-    color: white;
-    padding-left: 20px;
-}
 
 
+/* footer */
 .footer {
+    position: sticky;
     width: 100%;
     color: white;
     text-align: center;
     font-size: 13px;
-    background-color: tomato;
+    background-color: black;
 }
 
 /* COOKIE LAW*/
 #CookielawBanner {
     background: #fff;
     padding: 15px 0;
+    color: black;
 }
 
-#CookielawBanner .container {
+#CookielawBanner .cookies {
     position: relative;
+    color: black;
 }
 
 #CookielawBanner #CookielawCross {
@@ -165,6 +164,133 @@ h1{
     position: absolute;
     top: 0;
     right: 0;
+    bottom: 0;
     width: 15px;
     height: 15px;
 }
+
+
+/* Contact Page */
+h1{
+    text-align: center;
+    color: white;
+    padding-left: 20px;
+}
+
+.container{
+    border-radius: 5px;
+    padding: 20px;
+    size: 20px;
+    color: white;
+    border-radius: 5px;
+    padding: 20px;
+
+
+}
+.container .button{
+    background-color: rgb(1, 138, 1); 
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.container .button1 {
+    color: black; 
+    border: rgb(20, 20, 20);
+    border-radius: 10px; 
+}
+  
+.button1:hover {
+    background-color: rgb(5, 144, 5);
+    color: white;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+  
+.button span:after {
+    content: ' 💬';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -50px;
+    transition: 0.5s;
+}
+  
+.button:hover span {
+    padding-right: 25px;
+}
+  
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+
+}
+.info{
+    color: white;
+    text-align: center;
+}
+/* profile page */
+.container .btn{
+    background-color: rgb(69, 128, 216); 
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.container .button2 {
+    color: white; 
+    border: rgb(20, 20, 20);
+    border-radius: 10px; 
+}
+  
+.button2:hover {
+    background-color: rgb(6, 45, 123);
+    color: white;
+}
+
+.btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+  
+.btn span:after {
+    content: ' 💬';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -50px;
+    transition: 0.5s;
+}
+  
+.btn:hover span {
+    padding-right: 25px;
+}
+  
+.btn:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.content-section{
+    color:white ;
+}
+
+/* update prfile page */

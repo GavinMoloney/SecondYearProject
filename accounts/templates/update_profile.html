@@ -3,14 +3,14 @@
 {% load crispy_forms_tags %}
 {% block title %}Update profile{% endblock title %}
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/Contact.css' %}">
+<!--<link rel="stylesheet" type="text/css" href="{% static 'css/Contact.css' %}">-->
 </br>
   <h1>Update Your Profile: {{ user.username }} 😊</h1>
   <div class = "container">
     <form method = "post" enctype="multipart/form-data"> 
       {% csrf_token %} 
       {{ form.as_p }} 
-      <button class="btn btn-info ml-2" type="submit">Upload</button> 
+      <button class="button button1" type="submit">Upload</button> 
     </form> 
   </div>
 </br>

@@ -3,7 +3,7 @@
 {% block title %}Profile{% endblock title %}
 {% block content %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/base1.css' %}">
+<!--<link rel="stylesheet" type="text/css" href="{% static 'css/base1.css' %}">-->
 
 </div>
     <div class="content-section">
@@ -16,12 +16,17 @@
           <h5>Mobile Number: {{ user.profile.mobile }}</h5>
           <h5 > Last Login:  {{user.last_login}}</h5>
         </br>
-          <p><a class="btn btn-link" style="vertical-align:middle" href="{% url 'update_profile' %}">Update Your Profile</a></p>
-          <p><a class="btn btn-link" style="vertical-align:middle" href="{% url 'password_change' %}">password change</a></p>
       </div>
       </div>
     </div>
+    <div class="container">
+    <a class="btn button2" style="vertical-align:middle" href="{% url 'update_profile' %}" type="submit"><span>Update Your Profile</span></a>
+    <a class="btn button2" style="vertical-align:middle" href="{% url 'password_change' %}" type="submit"><span>password change</span></a>
+      </div>
     <script>
+
+    
+    
       setTimeout(function(){
         if ($('#msg').length > 0) {
           $('#msg').remove();
