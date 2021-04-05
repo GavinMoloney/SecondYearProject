@@ -33,12 +33,14 @@
 						{% if user.is_authenticated %}		
 							{% if user in picture.voted_by.all %}
 							<form method="POST" action ="{% url 'down_vote' picture.pk %}">
-								<button type="submit" class="btn btn-secondary">Vote down</button>
+								<button type="submit" class="btn btn-secondary">Vote down 👎
+									
+								</button>
 								{% csrf_token %}
 							</form>	
 							{% else %}									
 								<form method="POST" action ="{% url 'up_vote' picture.pk %}">									
-									<button type="submit" class="btn btn-secondary">Vote up</button>
+									<button type="submit" class="btn btn-secondary">Vote up 👍</button>
 									{% csrf_token %}
 								</form>	
 								

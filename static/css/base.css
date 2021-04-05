@@ -7,17 +7,7 @@
     background-size: cover;
     position: relative;
 }
-/*
-.footer{
-    position: sticky;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    color: white;
-    height: 5vh;
-}
-*/
+
 .dark-mode {
     background-color: black;
     color: white;
@@ -116,8 +106,34 @@
 .transp{
     background-color: transparent; 
 }
+/*
+.toggle-button{
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
 
+}
+.toggle-button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+@media (max-width: 400px){
+    .toggle-button {
+        display: flex;
+    }
 
+    .nav{
+        display: none;
+    }
+}
+*/
 
 /* STORE RELATED */
 
@@ -131,7 +147,10 @@
     max-height: 550px;
 }
 
-
+/* Login page */
+.my_login{
+    min-height: 100vh;
+}
 
 
 
@@ -177,17 +196,18 @@ h1{
     padding-left: 20px;
 }
 
-.container{
+.my_contact{
     border-radius: 5px;
     padding: 20px;
     size: 20px;
     color: white;
     border-radius: 5px;
     padding: 20px;
+    font-weight:900;
 
 
 }
-.container .button{
+.my_contact .button{
     background-color: rgb(1, 138, 1); 
     border: none;
     color: white;
@@ -200,7 +220,7 @@ h1{
     cursor: pointer;
 }
 
-.container .button1 {
+.my_contact .button1 {
     color: black; 
     border: rgb(20, 20, 20);
     border-radius: 10px; 
@@ -240,8 +260,11 @@ h1{
     color: white;
     text-align: center;
 }
+
+
+
 /* profile page */
-.container .btn{
+.my_profile .btn{
     background-color: rgb(69, 128, 216); 
     border: none;
     color: white;
@@ -250,11 +273,10 @@ h1{
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    transition-duration: 0.4s;
     cursor: pointer;
 }
 
-.container .button2 {
+.my_profile .button2 {
     color: white; 
     border: rgb(20, 20, 20);
     border-radius: 10px; 
@@ -269,16 +291,12 @@ h1{
     cursor: pointer;
     display: inline-block;
     position: relative;
-    transition: 0.5s;
 }
   
 .btn span:after {
-    content: ' 💬';
     position: absolute;
     opacity: 0;
     top: 0;
-    right: -50px;
-    transition: 0.5s;
 }
   
 .btn:hover span {
@@ -293,4 +311,72 @@ h1{
     color:white ;
 }
 
-/* update prfile page */
+.my_profile{
+    min-height: 100vh;
+    margin-left: 2%;
+    margin-right: 20%;
+
+}
+
+/* newsletter */
+.my_newsletter{
+    min-height: 100vh;
+}
+
+/* update profile page */
+
+.update_my_profile{
+    min-height: 100vh;
+    color: white;
+}
+
+.update_my_profile .my_button{
+    background-color: rgb(69, 128, 216); 
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.update_my_profile .button1 {
+    color: white; 
+    border: rgb(20, 20, 20);
+    border-radius: 10px; 
+}
+  
+.button1:hover {
+    background-color: rgb(6, 45, 123);
+    color: white;
+}
+
+.my_button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+  
+.my_button span:after {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+}
+  
+.my_button:hover span {
+    padding-right: 25px;
+}
+  
+.my_button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+
+/* password change page */
+.my_password{
+    min-height: 100vh;
+    color: white;
+}

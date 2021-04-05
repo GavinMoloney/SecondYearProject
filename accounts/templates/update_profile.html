@@ -6,11 +6,11 @@
 <!--<link rel="stylesheet" type="text/css" href="{% static 'css/Contact.css' %}">-->
 </br>
   <h1>Update Your Profile: {{ user.username }} 😊</h1>
-  <div class = "container">
+  <div class = "container update_my_profile">
     <form method = "post" enctype="multipart/form-data"> 
       {% csrf_token %} 
       {{ form.as_p }} 
-      <button class="button button1" type="submit">Upload</button> 
+      <button class="my_button button1" type="submit"><span>Upload</span></button> 
     </form> 
   </div>
 </br>
