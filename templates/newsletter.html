@@ -5,7 +5,7 @@
 {% block content %}
             <div class="col-12">
                 {% if email %}
-                <p class="text-white">{{ email }} has been {{ action }}.</p>
+                <p class="text-white">{{ email|lower }} has been {{ action }}.</p>
                 {% endif %}
             </div>
         {% if form %}

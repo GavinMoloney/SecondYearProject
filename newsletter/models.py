@@ -6,7 +6,7 @@ class Subscriber(models.Model):
     confirmed = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.email + " (" + ("not " if not self.confirmed else "") + "confirmed)"
+        return self.email.lower() + " (" + ("not " if not self.confirmed else "") + "confirmed)"
 
 class Newsletter(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
