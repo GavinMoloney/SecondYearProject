@@ -8,7 +8,7 @@
 <div class="container pt-5">
 	<div class="row my_row_class">
 		<div class = "mx-auto">
-		<p><a href="{% url 'shop' %}">Shop Home</a> | <a href="{% url 'store:category_detail' product.category.slug %}">Back</a> | {{product.name}}</p>
+		<p><a href="{% url 'shop' %}">Shop Home</a> | <a href="javascript:history.go(-1)">Go Back</a> | {{product.name}}</p>
 	</div>	
 	</div>
 	<div>

@@ -10,12 +10,17 @@
 	<div>
 		<p class="text-center my_search_text">You have searched for: <b>"{{ query }}"</b></p>
 	</div>
-	<div class="container my_cart">
+	<div class="container">
+		<div class="row my_row_class">
+			<div class="mx-auto">
+				<p><a href="{% url 'shop' %}">Back to Shop</a></p>
+			</div>
+		</div>
 		<div class="row mx-auto">
 			{% for product in products %}
 				<div class="my_bottom_margin col-9 col-sm-12 col-md-4 col-md-12 col-lg-4">
 					<div class="card text-center" style="min-width: 18rem;">
-                        <a href="{% url 'store:product_detail' product.category.slug product.slug %}"><img class="card-img-top my_image" 
+                        <a href="{% url 'store:product_detail' product.category.slug product.slug %}"><img class="card-img-top my_image"
                             src="{{product.image.url}}" alt="{{product.name}}"></a>
 						<div class="card-body">
 							<h4>{{product.name}}</h4>
@@ -27,7 +32,12 @@
 				<div class="row mx-auto">
 					<p class="text-center my_search_text">0 results found.</p>
 				</div>
+				<div class="container">
+					<p class="text-center empty_search">Keep Searching with AstroShop.ie</p>
+					<img src="/static/images/search.png" class="mx-auto d-block" style="width:50%"> 
+				  </div>
 			{% endfor %}
 		</div>
 	</div>
 {% endblock %}
+
