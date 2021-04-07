@@ -11,13 +11,13 @@
 			<br>
 <table class="table table-bordered">
 				<tr>
-					<td class="text-left" colspan="2">
+					<td class="text-left text-center" colspan="2">
 						<b>Order: </b>#{{ order.id }}<br>
 						<b>Date: </b>{{ order.created|date:"d M Y" }}<br>
 						<b>Order Total: </b>€{{ order.total }}<br>
 						<b>Order Status: </b><i class="fas fa-check"></i> Complete.
 					</td>
-                    <td class="text-left" colspan="2">
+                    <td class="text-left text-center" colspan="2">
 						<b>Billing Address: </b><br>
 						{{ order.billingName }}<br>
 						{{ order.billingAddress1 }}<br>
@@ -26,7 +26,7 @@
 						{{ order.billingCountry }}<br>
 					</td>
 				</tr>
-				<tr>
+				<tr class="my_print">
 					<td><b>Product Description</b></td>
 					<td><b>Qty</b></td>
 					<td><b>Unit Price</b></td>
@@ -57,15 +57,26 @@
 						{{ order.shippingPostcode }}<br>
 						{{ order.shippingCountry }}<br>
 					</td>
+
 					<td class="text-left" colspan="2">
 						<b>Payment Details: </b><br>
 						The order #{{ order.id }} has been paid successfully via Stripe.
 					</td>
 				</tr>
 			</table>
-			<button class="btn btn-secondary" onclick="window.print();"><i class="fas fa-print"></i> Print Order</button>
+			<button class="btn btn-secondary bg-primary" onclick="window.print();"><i class="fas fa-print"></i> Print Order</button>
+			<!-- Dark Mode-->
+			<button onclick="myFunction()">Toggle dark mode</button>
 		</div>
 	</div>
 	<br>
 	<br>
+	<!-- Dark Mode-->
+	<script>
+		function myFunction() {
+		   var element = document.body;
+		   element.classList.toggle("dark-mode");
+		}
+		</script>
+		
 {% endblock %}

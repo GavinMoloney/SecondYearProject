@@ -5,7 +5,7 @@
 {% endblock %}
 {% block content %}
 	<div>
-		<div class="text-center">
+		<div class="text-center my_order">
 			<br>
 			<h1 class="text-center my_title">Order History</h1>
 			<br>
@@ -36,8 +36,17 @@
 			<p>You have not placed any orders yet.<br><br><a href="{% url 'shop' %}" 
 				                                           class="btn btn-secondary">Continue shopping</a></p>
 			{% endif %}
+			<!-- Dark Mode-->
+			<button onclick="myFunction()">Toggle dark mode</button>
+
 		</div>
 	</div>
 	<br>
 	<br>
+	<script>
+		function myFunction() {
+		   var element = document.body;
+		   element.classList.toggle("dark-mode");
+		}
+	</script>
 {% endblock %}

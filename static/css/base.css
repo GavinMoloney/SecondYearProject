@@ -73,6 +73,24 @@
     animation-duration: 2s;
 }
 
+.drop_nav{
+    background:none !important;
+    text-transform: uppercase;
+    float: right;
+}
+.drop_nav li {
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+.drop_nav a{
+    float: left;    
+    color: rgb(245, 237, 237);
+    font-size: 1.2em;
+}
+.drop_nav a:hover{
+    text-decoration: none;
+}
 
 
 .nav {
@@ -106,34 +124,41 @@
 .transp{
     background-color: transparent; 
 }
-/*
-.toggle-button{
-    position: absolute;
-    top: .75rem;
-    right: 1rem;
+
+.nav .icon {
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
+    float: right;
+}
 
-}
-.toggle-button .bar{
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
-}
-@media (max-width: 400px){
-    .toggle-button {
-        display: flex;
-    }
+@media screen and (max-width: 600px) {
+    .nav li:not(:first-child) {display: none;}
+    .nav a.icon {
+      float: left;
+      display: block;
 
-    .nav{
-        display: none;
     }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .nav.responsive {position: relative;}
+    .nav.responsive .icon {
+      position: absolute;
+      display: flex;
+      right: 0;
+      top: 0;
+      flex-direction: column;
+      color: white;
+    }
+    .nav.responsive li {
+      flex-direction: column;
+      float: left;
+      display: block;
+      text-align: left;
+      color: white;
+    }
+ 
 }
-*/
+
 
 /* STORE RELATED */
 
@@ -379,4 +404,17 @@ h1{
 .my_password{
     min-height: 100vh;
     color: white;
+}
+/* order page height */
+.my_order{
+     height: 100vh;
+}
+/* order detail */
+.my_print{
+    text-align: center;
+    background-color: rgb(202, 201, 201);
+}
+/* cart page */
+.my_cart{
+    height: 100vh;
 }
