@@ -23,13 +23,14 @@
       </div>
     </div>
 
-    <script>
 
-      setTimeout(function(){
-        if ($('#msg').length > 0) {
-          $('#msg').remove();
-        }
-      }, 2000)
-    </script>
-    {% include 'messages.html' %}
 {% endblock content %}
+<script>
+
+  setTimeout(function(){
+    if ($('#msg').length > 0) {
+      $('#msg').remove();
+    }
+  }, 2000)
+</script>
+{% include 'messages.html' %}

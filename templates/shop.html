@@ -4,18 +4,18 @@
 {% block content %}
 
 <div class ="container pt-5">
-	<div>
-		<h1 >Our Products Collection</h1>
+	<div class="my_shop">
+		<h1>Our Products Collection</h1>
 		<p>Blah blah blah</p>
 	</div>
 	<!--Dark Mode-->
-	<button onclick="myFunction()">Toggle dark mode</button>
+	<button onclick="myFunction()" class="fa fa-adjust">Toggle dark mode</button>
 	<div class="col-12">
 		<div class="row">
 			{% for category in menu_categories %}
 			<div class="col-lg-4 col-md-6 col-12 my-3">
 				<div class = "card text-center h-100 ">
-					<a href="{% url 'store:category_detail' category.slug %}"><img class ="card-img-top" src="{{category.image.url}}" alt="{{category.name}}"></a>
+					<a href="{% url 'store:category_detail' category.slug %}"><img class ="card-img-top " src="{{category.image.url}}" alt="{{category.name}}"></a>
 					<div class="card-footer ">
 						<h4>{{category.name}}</h4>
 

@@ -215,7 +215,7 @@
 
 
 /* Contact Page */
-h1{
+.my_contact h1{
     text-align: center;
     color: white;
     padding-left: 20px;
@@ -369,12 +369,12 @@ h1{
 
 .update_my_profile .button1 {
     color: white; 
-    border: rgb(20, 20, 20);
+    border: rgb(14, 13, 13);
     border-radius: 10px; 
 }
   
 .button1:hover {
-    background-color: rgb(6, 45, 123);
+    background-color: rgb(31, 74, 138);
     color: white;
 }
 
@@ -402,19 +402,34 @@ h1{
 
 /* password change page */
 .my_password{
-    min-height: 100vh;
+    height: 100vh;
     color: white;
 }
 /* order page height */
 .my_order{
-     height: 100vh;
+    height: 100vh;
 }
+
 /* order detail */
 .my_print{
     text-align: center;
-    background-color: rgb(202, 201, 201);
+    background-color: rgb(165, 165, 165);
 }
 /* cart page */
 .my_cart{
+    height: 100vh;
+}
+
+/* product_detail */
+.my_product {
+    height: 100vh;
+}
+/* Shop */
+.my_shop h1{
+    text-align: center;
+}
+
+/* Gallery */
+.my_gallery{
     height: 100vh;
 }

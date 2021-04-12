@@ -4,8 +4,9 @@
 {% block title %}AstroView Contact us{% endblock title %}
 {% block content %}
 </br>
-  <h1>Contact Us</h1>
+  
 <div class = "container my_contact">
+  <h1>Contact Us</h1>
   <form method="post">
         {% csrf_token %}
       {{ form|crispy }}

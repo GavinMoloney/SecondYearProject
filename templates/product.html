@@ -5,7 +5,7 @@
 {% endblock %}
 {% block title %}{{ product.name }} {% endblock %}
 {% block content %}
-<div class="container pt-5">
+<div class="container pt-5 my_product">
 	<div class="row my_row_class">
 		<div class = "mx-auto">
 		<p><a href="{% url 'shop' %}">Shop Home</a> | <a href="javascript:history.go(-1)">Go Back</a> | {{product.name}}</p>
@@ -32,7 +32,7 @@
 						<a class="btn btn-secondary" href="{% url 'cart:add_cart' product.id %}">Add to Cart</a>
 						{% endif %}
 					</div>
-					<div class = col-3>
+					<div class = "col-3">
 						<h1>Product Description</h1>
 						<p>{{product.description}}</p>						
 					</div>
