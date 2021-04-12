@@ -40,6 +40,7 @@ urlpatterns = [
     path('confirm/', views.confirm, name='confirm'),
     path('delete/', views.delete, name='delete'),
     path('gallery/', include('gallery.urls')),
+    path('management/', include('management.urls')),
     path('search/', include('search_app.urls')),
     #path('newsletter/', include('newsletter.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

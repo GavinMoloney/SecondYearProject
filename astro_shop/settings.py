@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'newsletter',
     'gallery',
     'search_app',
+    'management',
 
     #3rd party
     'stripe',
@@ -74,6 +75,7 @@ TEMPLATES = [
                  str(BASE_DIR.joinpath('order','templates')),
                  str(BASE_DIR.joinpath('accounts','templates')),
                  str(BASE_DIR.joinpath('gallery','templates')),
+                 str(BASE_DIR.joinpath('management','templates')),
                  str(BASE_DIR.joinpath('search_app', 'templates'))],
         'APP_DIRS': True,
         'OPTIONS': {

@@ -1,6 +1,7 @@
 var Cookielaw = {
 
-    createCookie: function (name, value, days) {
+    createCookie: function (name, value, days) 
+    {
         var date = new Date(),
             expires = '';
         if (days) {

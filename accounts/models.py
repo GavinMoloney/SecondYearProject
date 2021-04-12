@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser, User
 from django.db import models
 from django.contrib.auth import settings
+from django.urls import reverse
 
 
 class CustomUser(AbstractUser):
@@ -16,3 +17,4 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user.username} Profile'
+    

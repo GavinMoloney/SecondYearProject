@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container h-100 text-white mt-5">
+    <a class="btn btn-link" style="vertical-align:middle" href="{% url 'management:user_add' %}">Add user</a></p>
+    List of our users:
+    {% for user in user_list %}
+    <div>       
+        <a class ="text-white" href="{% url 'management:user_details' user.pk %}"> {{ user.username }}  {{ user.pk }} </a> 
+    </div>
+    {% endfor%}
+
+    
+</div>
+
+{% endblock content %}

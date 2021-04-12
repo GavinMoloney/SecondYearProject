@@ -4,8 +4,8 @@ from .models import CustomUser, Profile
 from django.contrib.auth.models import Group
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
-
 from django.contrib import messages
+
 
 def signupView(request):
     if request.method == 'POST':

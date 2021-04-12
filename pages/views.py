@@ -13,6 +13,9 @@ class ContactPageView(TemplateView):
 class GalleryPageView(TemplateView):
     template_name = 'gallery.html'
 
+class ManagementView(TemplateView):
+    template_name = "mgmt.html"
+
 
 def shop_page(request):
     categories = Category.objects.all()
