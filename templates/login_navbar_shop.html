@@ -28,7 +28,12 @@
       </ul>
       <form class="form-inline my-2 my-lg-0" action="{% url 'search_app:searchResult'%}" method="get">
         {% csrf_token %}
-        <input class="form-control mr-sm-2" type="search" placeholder="Search &#8981" aria-label="Search" name="q">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search Product &#8981" aria-label="Search" name="prod">
+        <button class="btn bg-primary my-2 my-sm-0" type="submit">Search &#8981</button>
+      </form>
+      <form class="form-inline my-2 my-lg-0" action="{% url 'search_app:searchResult'%}" method="get">
+        {% csrf_token %}
+        <input class="form-control mr-sm-2" type="search" placeholder="Search Category &#8981" aria-label="Search" name="cat">
         <button class="btn bg-primary my-2 my-sm-0" type="submit">Search &#8981</button>
       </form>
     </div>
