@@ -57,3 +57,6 @@ def delete(request):
         return render(request, 'newsletter.html', {'email': sub.email, 'action': 'unsubscribed'})
     else:
         return render(request, 'newsletter.html', {'email': sub.email, 'action': 'denied'})
+
+def terms(request):
+    return render(request, 'terms.html')

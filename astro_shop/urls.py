@@ -42,5 +42,6 @@ urlpatterns = [
     path('gallery/', include('gallery.urls')),
     path('management/', include('management.urls')),
     path('search/', include('search_app.urls')),
+    path('terms/', views.terms, name='terms'),
     #path('newsletter/', include('newsletter.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
