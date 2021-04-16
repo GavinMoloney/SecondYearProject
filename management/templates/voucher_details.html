@@ -1,0 +1,21 @@
+{% extends "shop_base.html" %}
+{% block content %}
+<div class="container h-100 text-white mt-5">
+    <p> Voucher details:</p>
+    
+    <div>
+        <p>Code:  {{ voucher.code }} </p>
+        <p>Valid from:  {{ voucher.valid_from }} </p>
+        <p>Valid to:  {{ voucher.valid_to }} </p>
+        <p>Discount:  {{ voucher.discount }} </p>
+        <p>Is active:  {{ voucher.active }} </p>
+
+
+    </div>
+    <p> Actions:
+    <p>  <a href="{% url 'management:voucher_update' voucher.id %}" class="btn btn-link" >Edit voucher</a> </p>
+    <p>  <a href="{% url 'management:voucher_delete' voucher.id %}" class="btn btn-link" >Delete voucher</a> </p>
+    </p>
+</div>
+
+{% endblock content %}

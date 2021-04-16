@@ -1,10 +1,10 @@
 {% extends "shop_base.html" %}
-{% block title %}Delete Category{% endblock title %}
+{% block title %}Delete Profile{% endblock title %}
 {% block content %}
 </br>
-  <h1>Delete</h1>
+  <h1>Delete profile</h1>
   <form action="" method="post">{% csrf_token %}
-    <p>Are you sure you want to delete "{{ category.name }}"?</p>
+    <p>Are you sure you want to delete {{ profile.user }}'s profile ?</p>
     <button class="btn btn-danger ml-2" type="submit">Confirm</button>
   </form>
 </br>

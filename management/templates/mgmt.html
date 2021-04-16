@@ -1,9 +1,14 @@
-{% extends 'base.html' %}
+{% extends "shop_base.html" %}
 {% block content %}
-<div class="container h-100">
-    <a href="{% url 'management:users' %}">Manage Users</a>
-    <a href="{% url 'management:manage_shop' %}">Manage Shop</a>
-    <a href="">Manage Gallery</a>
+<div class="container h-100 mt-5">
+    <p><a class="text-decoration-none" href="{% url 'management:users' %}">Manage Users</a></p>
+    <p><a class="text-decoration-none" href="{% url 'management:profiles' %}">Manage User profiles</a></p>
+    <p><a class="text-decoration-none" href="{% url 'management:manage_shop' %}">Manage Shop</a></p>
+    <p><a class="text-decoration-none" href="{% url 'management:vouchers' %}">Manage Vouchers</a></p>
+    <p><a class="text-decoration-none" href="{% url 'management:subscribers' %}">Manage Subscribers</a></p>
+    <p><a class="text-decoration-none" href="{% url 'management:newsletters' %}">Manage Newsletters</a></p>
+    <p><a class="text-decoration-none" href="">Manage Gallery</a></p>
+    <p><a class="text-decoration-none" href="">Manage Gallery of the month</a></p>
 </div>
 
 {% endblock content %}

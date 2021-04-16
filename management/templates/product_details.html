@@ -1,0 +1,30 @@
+{% extends "shop_base.html" %}
+{% block content %}
+<div class="container h-100 mt-5">
+    <p> Product details:</p>
+    
+    <div>
+        <p>ID:  {{ product.id }} </p>
+        <p>Slug:  {{ product.slug }} </p>
+        <p>Name:  {{ product.name }} </p>
+        <p>Make:  {{ product.make }} </p>
+        <p>Model:  {{ product.model }} </p>
+        <p>Describtion:  {{ product.description }} </p>
+        <p>Category:  {{ product.category }} </p>
+        <p>Price:  {{ product.price }} </p>
+        <p>Image name:  {{ product.image }} </p>        
+        <p>Stock:  {{ product.stock }} </p>
+        <p>Is available:  {{ product.available }} </p>
+        <p>Created:  {{ product.created }} </p>
+        <p>Updated:  {{ product.updated }} </p>
+        <p>Image:  <img src="{{product.image.url}}" alt="{{product.name}}" style="max-height: 350px;"></p>
+        
+
+    </div>
+    <p> Actions:
+    <p>  <a href="{% url 'management:prod_update' product.slug %}" class="btn btn-link" >Edit product</a> </p>
+    <p>  <a href="{% url 'management:prod_delete' product.slug %}" class="btn btn-link" >Delete product</a> </p>
+    </p>
+</div>
+
+{% endblock content %}

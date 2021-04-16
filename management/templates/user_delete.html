@@ -1,9 +1,9 @@
-{% extends 'base.html' %}
+{% extends "shop_base.html" %}
 {% block title %}Delete User{% endblock title %}
 {% block content %}
 </br>
   <h1>Delete</h1>
-  <form class = "text-white" action="" method="post">{% csrf_token %}
+  <form action="" method="post">{% csrf_token %}
     <p>Are you sure you want to delete "{{ customuser.username }}"?</p>
     <button class="btn btn-danger ml-2" type="submit">Confirm</button>
   </form>

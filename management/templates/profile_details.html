@@ -1,0 +1,21 @@
+{% extends "shop_base.html" %}
+{% block content %}
+<div class="container h-100 mt-5">
+    <p> Profile details:</p>
+    
+    <div>
+        <p>User:  {{ profile.user }} </p>
+        <p>Profile ID:  {{ profile.id }} </p>
+        <p>Profile role:  {{ profile.role }} </p>
+        <p>Phone number:  {{ profile.mobile }} </p>
+        <p>Profile image name:  {{ profile.mobile }} </p>
+        <p>Image:  <img src="{{profile.image.url}}"></p>
+
+    </div>
+    <p> Actions:
+    <p>  <a href="{% url 'management:profile_update' profile.id %}" class="btn btn-link" >Edit profie</a> </p>
+    <p>  <a href="{% url 'management:profile_delete' profile.id %}" class="btn btn-link" >Delete profie</a> </p>
+    </p>
+</div>
+
+{% endblock content %}

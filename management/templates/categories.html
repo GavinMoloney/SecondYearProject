@@ -1,11 +1,11 @@
-{% extends 'base.html' %}
+{% extends "shop_base.html" %}
 {% block content %}
-<div class="container h-100 text-white mt-5">
+<div class="container h-100 mt-5">
     <a class="btn btn-link" style="vertical-align:middle" href="{% url 'management:cat_add' %}">Add category</a></p>
     List of our categories:
     {% for cat in category_list %}
     <div>       
-        <a class ="text-white" href="{% url 'management:cat_details' cat.slug %}">Name: {{ cat.name }} ID:{{ cat.slug }} </a> 
+        <a href="{% url 'management:cat_details' cat.slug %}">Name: {{ cat.name }} ID:{{ cat.slug }} </a> 
     </div>
     {% endfor%}
 

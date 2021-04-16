@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+{% extends "shop_base.html" %}
 {% block content %}
-<div class="container h-100 text-white mt-5">
+<div class="container h-100 mt-5">
     <p> Category details:</p>
     
     <div>
@@ -8,8 +8,8 @@
 
     </div>
     <p> Actions:
-    <p>  <a class ="text-white" href="{% url 'management:cat_update' category.slug %}" class="btn btn-link" >Edit category</a> </p>
-    <p>  <a class ="text-white" href="{% url 'management:cat_delete' category.slug %}" class="btn btn-link" >Delete category</a> </p>
+    <p>  <a href="{% url 'management:cat_update' category.slug %}" class="btn btn-link" >Edit category</a> </p>
+    <p>  <a href="{% url 'management:cat_delete' category.slug %}" class="btn btn-link" >Delete category</a> </p>
     </p>
 </div>
 

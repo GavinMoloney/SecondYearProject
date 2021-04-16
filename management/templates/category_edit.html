@@ -1,9 +1,9 @@
-{% extends 'base.html' %}
+{% extends "shop_base.html" %}
 {% block title %}Edit Category{% endblock title %}
 {% block content %}
 </br>
-  <h1>Edit</h1>
-  <form class = "text-white" action="" method="post">{% csrf_token %}
+  <h1>Edit category</h1>
+  <form action="" method="post">{% csrf_token %}
     {{ form.as_p }}
     <button class="btn btn-info ml-2" type="submit">Update</button>
   </form>

@@ -1,8 +1,8 @@
 {% extends "shop_base.html" %}
-{% block title %}Edit User{% endblock title %}
+{% block title %}Edit Profile{% endblock title %}
 {% block content %}
 </br>
-  <h1>Edit</h1>
+  <h1>Edit profile</h1>
   <form action="" method="post">{% csrf_token %}
     {{ form.as_p }}
     <button class="btn btn-info ml-2" type="submit">Update</button>

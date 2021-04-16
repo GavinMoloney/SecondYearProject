@@ -16,7 +16,10 @@
                 >Welcome, {{ user.username }}</a> 
           <div class="dropdown-menu">
             <a class="hoverable nav-link text-dark" href = "{% url 'order:order_history' %}" class = "dropdown-item">Order History</a>   
-            <a class="hoverable nav-link text-dark" href="{% url 'signout' %}">Sign Out <i class="fas fa-sign-out-alt"></i></a>                
+            <a class="hoverable nav-link text-dark" href="{% url 'signout' %}">Sign Out <i class="fas fa-sign-out-alt"></i></a>    
+            {% if user.is_staff %}
+            <a class="hoverable nav-link text-dark" href="{% url 'management:management' %}">Console</a>  
+            {% endif %}            
           </div>
         </li>
         {% else %}
@@ -26,15 +29,6 @@
         {% endif %}
         <li class="nav-item"><a class="nav-link text-dark" href="{% url 'cart:cart_detail' %}"><i class="fas fa-shopping-cart"></i>{{item_count}}</a></li>
       </ul>
-      <form class="form-inline my-2 my-lg-0" action="{% url 'search_app:searchResult'%}" method="get">
-        {% csrf_token %}
-        <input class="form-control mr-sm-2" type="search" placeholder="Search Product &#8981" aria-label="Search" name="prod">
-        <button class="btn bg-primary my-2 my-sm-0" type="submit">Search &#8981</button>
-      </form>
-      <form class="form-inline my-2 my-lg-0" action="{% url 'search_app:searchResult'%}" method="get">
-        {% csrf_token %}
-        <input class="form-control mr-sm-2" type="search" placeholder="Search Category &#8981" aria-label="Search" name="cat">
-        <button class="btn bg-primary my-2 my-sm-0" type="submit">Search &#8981</button>
-      </form>
+
     </div>
   </nav>    
