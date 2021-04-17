@@ -1,6 +1,7 @@
-{% extends "shop_base.html" %}
+{% extends "console_base.html" %}
 {% block content %}
-<div class="container h-100 mt-5">
+<body class="home-image">
+<div class="container h-100 mt-5 user_detail">
     <p> User details:</p>
     
     <div>
@@ -10,9 +11,9 @@
         <p>Can Upload images: {{ customuser.can_upload_images }} </p> 
     </div>
     <p> Actions:
-    <p>  <a href="{% url 'management:user_update' customuser.id %}" class="btn btn-link" >Edit user</a> </p>
-    <p>  <a href="{% url 'management:user_delete' customuser.id %}" class="btn btn-link" >Delete user</a> </p>
+    <p><a href="{% url 'management:user_update' customuser.id %}" class="btn btn-link fas fa-user-edit" >Edit user</a> </p>
+    <p><a href="{% url 'management:user_delete' customuser.id %}" class="btn btn-link fas fa-user-times" >Delete user</a> </p>
     </p>
 </div>
-
+</body>
 {% endblock content %}

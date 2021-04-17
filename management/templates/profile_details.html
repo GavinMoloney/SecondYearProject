@@ -1,6 +1,7 @@
-{% extends "shop_base.html" %}
+{% extends "console_base.html" %}
 {% block content %}
-<div class="container h-100 mt-5">
+<body class="home-image">
+<div class="container h-100 mt-5 my_user_profile">
     <p> Profile details:</p>
     
     <div>
@@ -9,13 +10,13 @@
         <p>Profile role:  {{ profile.role }} </p>
         <p>Phone number:  {{ profile.mobile }} </p>
         <p>Profile image name:  {{ profile.mobile }} </p>
-        <p>Image:  <img src="{{profile.image.url}}"></p>
+        <p>Image:  <img class="rounded-circle" style = "max-width: 400px; max-height: 400px;" src="{{profile.image.url}}"></p>
 
     </div>
     <p> Actions:
-    <p>  <a href="{% url 'management:profile_update' profile.id %}" class="btn btn-link" >Edit profie</a> </p>
-    <p>  <a href="{% url 'management:profile_delete' profile.id %}" class="btn btn-link" >Delete profie</a> </p>
+    <p>  <a href="{% url 'management:profile_update' profile.id %}" class="btn btn-link fas fa-user-edit" >Edit profie</a> </p>
+    <p>  <a href="{% url 'management:profile_delete' profile.id %}" class="btn btn-link fas fa-user-minus" >Delete profie</a> </p>
     </p>
 </div>
-
+</body>
 {% endblock content %}

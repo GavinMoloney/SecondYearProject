@@ -1,17 +1,18 @@
-{% extends "shop_base.html" %}
+{% extends "console_base.html" %}
 {% block content %}
-<div class="container h-100 mt-5">
-    <p> Subscriber details:</p>
+<body class="home-image">
+    <div class="container h-100 mt-5 my_subscriber_detail">
+        <p> Subscriber details:</p>
     
-    <div>
-        <p>Email:  {{ subscriber.email }} </p>
-        <p>Confirmed:  {{ subscriber.confirmed }} </p>
+        <div>
+            <p>Email:  {{ subscriber.email }} </p>
+            <p>Confirmed:  {{ subscriber.confirmed }} </p>
 
+        </div>
+        <p> Actions:
+        <p>  <a href="{% url 'management:subscriber_update' subscriber.id %}" class="btn btn-link fas fa-edit" >Edit subscriber</a> </p>
+        <p>  <a href="{% url 'management:subscriber_delete' subscriber.id %}" class="btn btn-link fas fa-trash" >Delete subscriber</a> </p>
+        </p>
     </div>
-    <p> Actions:
-    <p>  <a href="{% url 'management:subscriber_update' subscriber.id %}" class="btn btn-link" >Edit subscriber</a> </p>
-    <p>  <a href="{% url 'management:subscriber_delete' subscriber.id %}" class="btn btn-link" >Delete subscriber</a> </p>
-    </p>
-</div>
-
+</body>
 {% endblock content %}

@@ -1,15 +1,16 @@
-{% extends "shop_base.html" %}
+{% extends "console_base.html" %}
 {% block content %}
-<div class="container h-100 mt-5">
-    <a class="btn btn-link" style="vertical-align:middle" href="{% url 'management:subscriber_add' %}">Add subscriber</a></p>
-    List of our subscribers:
-    {% for sub in subscriber_list %}
-    <div>       
-        <a href="{% url 'management:subscriber_details' sub.pk %}"> Subscriber email:  {{ sub.email }} </a> 
-    </div>
-    {% endfor%}
+<body class="home-image">
+    <div class="container h-100 mt-5 my_subscriber">
+        <a class="btn btn-link fas fa-plus" style="vertical-align:middle" href="{% url 'management:subscriber_add' %}">Add subscriber</a></p>
+        List of our subscribers:
+        {% for sub in subscriber_list %}
+        <div>       
+            <a href="{% url 'management:subscriber_details' sub.pk %}"> Subscriber email:  {{ sub.email }} </a> 
+        </div>
+        {% endfor%}
 
     
-</div>
-
+    </div>
+</body>
 {% endblock content %}

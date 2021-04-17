@@ -1,11 +1,15 @@
-{% extends "shop_base.html" %}
+{% extends "console_base.html" %}
 {% block title %}Delete subscriber{% endblock title %}
 {% block content %}
 </br>
-  <h1>Delete subscriber</h1>
-  <form action="" method="post">{% csrf_token %}
-    <p>Are you sure you want to delete subscriber "{{ subscriber.email }}"?</p>
-    <button class="btn btn-danger ml-2" type="submit">Confirm</button>
-  </form>
-</br>
+<body class="home-image">
+  <div class="delete_subscriber">
+    <h1>Delete subscriber</h1>
+    <form action="" method="post">{% csrf_token %}
+      <p>Are you sure you want to delete subscriber "{{ subscriber.email }}"?</p>
+      <button class="btn btn-danger ml-2 fas fa-trash" type="submit">Confirm</button>
+    </form>
+  </br>
+  </div>
+</body>
 {% endblock content %}

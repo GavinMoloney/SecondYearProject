@@ -1,14 +1,18 @@
-{% extends "shop_base.html" %}
+{% extends "console_base.html" %}
 {% load static %}
 {% load crispy_forms_tags %}
 {% block title %}Add product{% endblock title %}
 {% block content %}
 </br>
-  <h1>New product</h1>
-  <form method = "post" enctype="multipart/form-data"> 
-    {% csrf_token %} 
-    {{ form.as_p }} 
-    <button class="btn btn-info ml-2" type="submit">Upload</button> 
-</form> 
-</br>
+<body class="home-image">
+  <div class="my_add_product">
+    <h1>New product</h1>
+    <form method = "post" enctype="multipart/form-data"> 
+      {% csrf_token %} 
+      {{ form.as_p }} 
+      <button class="btn btn-info ml-2 fas fa-upload" type="submit">Upload</button> 
+  </form> 
+  </br>
+  </div>
+</body>
 {% endblock content %}

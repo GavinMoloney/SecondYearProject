@@ -1,15 +1,14 @@
-{% extends "shop_base.html" %}
+{% extends "console_base.html" %}
 {% block content %}
-<div class="container h-100 mt-5">
-    <a class="btn btn-link" style="vertical-align:middle" href="{% url 'management:voucher_add' %}">Add voucher</a></p>
-    List of our vouchers:
-    {% for vouch in voucher_list %}
-    <div>       
-        <a href="{% url 'management:voucher_details' vouch.id %}">ID: {{ vouch.id }}    Code:  {{ vouch.code }} </a> 
+<body class="home-image">
+    <div class="container h-100 mt-5 my_voucher">
+        <a class="btn btn-link fas fa-plus" style="vertical-align:middle" href="{% url 'management:voucher_add' %}">Add voucher</a></p>
+        List of our vouchers:
+        {% for vouch in voucher_list %}
+        <div>       
+            <a href="{% url 'management:voucher_details' vouch.id %}">ID: {{ vouch.id }}    Code:  {{ vouch.code }} </a> 
+        </div>
+        {% endfor%}
     </div>
-    {% endfor%}
-
-    
-</div>
-
+</body>
 {% endblock content %}
