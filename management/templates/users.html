@@ -1,14 +1,15 @@
-{% extends "console_base.html" %}
+{% extends "shop_base.html" %}
 {% block content %}
-<body class="home-image">
-<div class="container mt-5 my_user">
-    <a class="btn button2 fa fa-user-plus" href="{% url 'management:user_add' %}" type="submit"><span>Add user</span></a></p>
-    <hr color="white">
-    <h3>List of our users:</h3>
+<div class="container h-100 mt-5">
+    <a class="btn btn-link" style="vertical-align:middle" href="{% url 'management:user_add' %}">Add user</a></p>
+    List of our users:
     {% for user in user_list %}
-    <hr color="white">
-    <li><a class="my_links" href="{% url 'management:user_details' user.pk %}"> {{ user.username }}  {{ user.pk }}</a></li> 
+    <div>       
+        <a href="{% url 'management:user_details' user.pk %}"> {{ user.username }}  {{ user.pk }} </a> 
+    </div>
     {% endfor%}
+
+    
 </div>
-</body>
+
 {% endblock content %}

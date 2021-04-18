@@ -1,17 +1,16 @@
-{% extends "console_base.html" %}
+{% extends "shop_base.html" %}
 {% block content %}
-<body class="home-image">
-    <div class="container h-100 mt-5 my_category_detail">
-        <p> Category details:</p>
+<div class="container h-100 mt-5">
+    <p> Category details:</p>
     
-        <div>
-            <p>Name:  {{ category.name }} </p>
+    <div>
+        <p>Name:  {{ category.name }} </p>
 
-        </div>
-        <p> Actions:
-        <p>  <a href="{% url 'management:cat_update' category.slug %}" class="btn btn-link fas fa-edit" >Edit category</a> </p>
-        <p>  <a href="{% url 'management:cat_delete' category.slug %}" class="btn btn-link fas fa-trash" >Delete category</a> </p>
-        </p>
     </div>
-</body>
+    <p> Actions:
+    <p>  <a href="{% url 'management:cat_update' category.slug %}" class="btn btn-link" >Edit category</a> </p>
+    <p>  <a href="{% url 'management:cat_delete' category.slug %}" class="btn btn-link" >Delete category</a> </p>
+    </p>
+</div>
+
 {% endblock content %}

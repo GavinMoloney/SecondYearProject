@@ -1,15 +1,11 @@
-{% extends "console_base.html" %}
+{% extends "shop_base.html" %}
 {% block title %}Edit Product{% endblock title %}
 {% block content %}
 </br>
-<body class="home-image">
-  <div class="edit_product">
-    <h1>Edit product</h1>
-    <form action="" method="post">{% csrf_token %}
-      {{ form.as_p }}
-      <button class="btn btn-info ml-2 fas fa-edit" type="submit">Update</button>
-    </form>
-  </br>
-  </div>
-</body>
+  <h1>Edit product</h1>
+  <form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-info ml-2" type="submit">Update</button>
+  </form>
+</br>
 {% endblock content %}

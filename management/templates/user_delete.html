@@ -1,15 +1,11 @@
-{% extends "console_base.html" %}
+{% extends "shop_base.html" %}
 {% block title %}Delete User{% endblock title %}
 {% block content %}
 </br>
-<body class="home-image">
-  <div class="user_delete">
-    <h1>Delete</h1>
-    <form action="" method="post">{% csrf_token %}
-      <p>Are you sure you want to delete "{{ customuser.username }}"?</p>
-      <button class="btn btn-danger ml-2 fas fa-user-minus" type="submit">Confirm</button>
-    </form>
-  </br>
-  </div>
-</body>
+  <h1>Delete</h1>
+  <form action="" method="post">{% csrf_token %}
+    <p>Are you sure you want to delete "{{ customuser.username }}"?</p>
+    <button class="btn btn-danger ml-2" type="submit">Confirm</button>
+  </form>
+</br>
 {% endblock content %}

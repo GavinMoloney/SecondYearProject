@@ -1,16 +1,15 @@
-{% extends "console_base.html" %}
+{% extends "shop_base.html" %}
 {% block content %}
-<body class="home-image">
-    <div class="container h-100 mt-5 my_category">
-        <a class="btn btn-link fas fa-plus" style="vertical-align:middle" href="{% url 'management:cat_add' %}">Add category</a></p>
-        List of our categories:
-        {% for cat in category_list %}
-        <div>       
-            <a href="{% url 'management:cat_details' cat.slug %}">Name: {{ cat.name }} ID:{{ cat.slug }} </a> 
-        </div>
-        {% endfor%}
+<div class="container h-100 mt-5">
+    <a class="btn btn-link" style="vertical-align:middle" href="{% url 'management:cat_add' %}">Add category</a></p>
+    List of our categories:
+    {% for cat in category_list %}
+    <div>       
+        <a href="{% url 'management:cat_details' cat.slug %}">Name: {{ cat.name }} ID:{{ cat.slug }} </a> 
+    </div>
+    {% endfor%}
 
     
 </div>
-</body>
+
 {% endblock content %}
