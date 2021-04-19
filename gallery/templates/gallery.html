@@ -8,7 +8,6 @@
 		<h1 >Our Gallery</h1>
         {% if user.is_authenticated %}
 		    <p>Share your magnificent pictures with us <a class="btn btn-link" href="{% url 'gallery_upload' %}">Upload your picture</a></p>
-			<p>Calc pic of the month <a class="btn btn-link" href="{% url 'gallery_of_the_month' %}">Calc pic of the month</a></p>
         </br></br>
         {% endif %}
 	</div>

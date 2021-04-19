@@ -1,6 +1,7 @@
 {% extends "shop_base.html" %}
 {% block title %}Delete subscriber{% endblock title %}
 {% block content %}
+<div class="container h-100 mt-5">
 </br>
   <h1>Delete subscriber</h1>
   <form action="" method="post">{% csrf_token %}
@@ -8,4 +9,5 @@
     <button class="btn btn-danger ml-2" type="submit">Confirm</button>
   </form>
 </br>
+</div>
 {% endblock content %}

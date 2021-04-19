@@ -1,0 +1,25 @@
+{% extends "shop_base.html" %}
+{% block content %}
+<div class="container h-100 mt-5">
+    <p> Picture details:</p>
+
+        <p>ID:  {{ picture.id }} </p>
+        <p>Title:  {{ picture.title }} </p>
+        <p>Location:  {{ picture.location }} </p>
+        <p>Description:  {{ picture.description }} </p>
+        <p>Date taken:  {{ picture.date_created }} </p>
+        <p>Describtion:  {{ picture.description }} </p>
+        <p>Image name:  {{ picture.image }} </p>
+        <p>Author:  {{ picture.author }} </p>
+        <p>Total votes:  {{ picture.total_votes }} </p>        
+        <p>Votes this month:  {{ picture.votes_this_month }} </p>
+        <p>Voted by:  {{ picture.voted_by }} </p>
+        <p>Image:  <img src="{{picture.image.url}}" alt="{{picture.title}}" style="max-height: 350px;"></p>
+        
+    <p> Actions:
+        <a href="{% url 'management:picture_update' picture.pk %}" class="btn btn-link" >Edit picture</a> 
+        <a href="{% url 'management:picture_delete' picture.pk %}" class="btn btn-link" >Delete picture</a> 
+    </p>
+</div>
+
+{% endblock content %}

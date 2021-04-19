@@ -1,0 +1,15 @@
+{% extends "shop_base.html" %}
+{% block content %}
+<div class="container h-100 mt-5">
+    <a class="btn btn-link" style="vertical-align:middle" href="{% url 'management:picture_add' %}">Add picture</a></p>
+    List of our pictures:
+    {% for pic in picture_list %}
+    <div>       
+        <a href="{% url 'management:picture_details' pic.pk %}">Picture title: {{ pic.title }} ID: {{ pic.id }} </a> 
+    </div>
+    {% endfor%}
+
+    
+</div>
+
+{% endblock content %}

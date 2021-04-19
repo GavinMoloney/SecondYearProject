@@ -3,15 +3,16 @@
 <div class="container h-100 mt-5">
     <p> User details:</p>
     
-    <div>
+
         <p>Name:  {{ customuser.username }} </p>
         <p>ID: {{ customuser.id }}  </p>
-        <p>Last login: {{ customuser.last_login }} </p>
+        <p>Last login: {{ customuser.last_login }} </p>        
         <p>Can Upload images: {{ customuser.can_upload_images }} </p> 
-    </div>
+        <p>Is staff: {{ customuser.is_staff }} </p>
+
     <p> Actions:
-    <p>  <a href="{% url 'management:user_update' customuser.id %}" class="btn btn-link" >Edit user</a> </p>
-    <p>  <a href="{% url 'management:user_delete' customuser.id %}" class="btn btn-link" >Delete user</a> </p>
+       <a href="{% url 'management:user_update' customuser.id %}" class="btn btn-link fas fa-user-edit" >Edit user</a> 
+       <a href="{% url 'management:user_delete' customuser.id %}" class="btn btn-link fas fa-user-times" >Delete user</a>
     </p>
 </div>
 

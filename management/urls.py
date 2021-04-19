@@ -1,12 +1,14 @@
 from django.urls import path
-from .views import UserManagementView, UserListView, UserDetailView, UserCreateView, UserDeleteView, UserUpdateView
+from .views import UserManagementView, UserListView, UserDetailView, UserDeleteView, UserUpdateView #, UserCreateView
 from .views import ShopManagementView, CategoryListView, CategoryCreateView, CategoryDeleteView, CategoryUpdateView, CategoryDetailView
 from .views import ProductListView, ProductCreateView, ProductDeleteView, ProductDetailView, ProductUpdateView
 from .views import VoucherListView, VoucherCreateView, VoucherDeleteView, VoucherDetailView, VoucherUpdateView
 from .views import ProfileListView, ProfileCreateView, ProfileDeleteView, ProfileDetailView, ProfileUpdateView
 from .views import SubscriberListView, SubscriberCreateView, SubscriberDeleteView, SubscriberDetailView, SubscriberUpdateView
 from .views import NewsletterListView, NewsletterCreateView, NewsletterDeleteView, NewsletterDetailView, NewsletterUpdateView
-
+from .views import PictureListView, PictureCreateView, PictureDeleteView, PictureDetailView, PictureUpdateView
+from .views import PictureOfTheMonthListView, PictureOfTheMonthDeleteView
+from accounts.views import signupView
 
 
 
@@ -17,7 +19,7 @@ urlpatterns = [
     path('', UserManagementView.as_view(), name = 'management'),
     path('user_management/', UserListView.as_view(), name = 'users'),
     path('user_detail/<int:pk>/', UserDetailView.as_view(), name = 'user_details'),
-    path('user_add/', UserCreateView.as_view(), name = 'user_add'),
+    path('user_add/', signupView, name = 'user_add'),
     path('user_delete/<int:pk>/', UserDeleteView.as_view(), name = 'user_delete'),
     path('user_update/<int:pk>/', UserUpdateView.as_view(), name = 'user_update'),
 
@@ -57,4 +59,14 @@ urlpatterns = [
     path('shop_management/vouchers/product_add', VoucherCreateView.as_view(), name = 'voucher_add'),
     path('shop_management/vouchers/product_delete/<int:pk>/', VoucherDeleteView.as_view(), name = 'voucher_delete'),
     path('shop_management/vouchers/product_update/<int:pk>/', VoucherUpdateView.as_view(), name = 'voucher_update'),
+
+    path('shop_management/pictures/', PictureListView.as_view(), name = 'pictures'),
+    path('shop_management/pictures/<uuid:pk>/', PictureDetailView.as_view(), name = 'picture_details'),
+    path('shop_management/pictures/picture_add', PictureCreateView.as_view(), name = 'picture_add'),
+    path('shop_management/pictures/picture_delete/<uuid:pk>/', PictureDeleteView.as_view(), name = 'picture_delete'),
+    path('shop_management/pictures/picture_update/<uuid:pk>/', PictureUpdateView.as_view(), name = 'picture_update'),
+
+    path('shop_management/pictures_of_the_month/', PictureOfTheMonthListView.as_view(), name = 'pictures_of_the_month'),
+    path('shop_management/pictures_of_the_month/picture_of_the_month_delete/<int:pk>/', PictureOfTheMonthDeleteView.as_view(), name = 'picture_of_the_month_delete'),
+
 ]

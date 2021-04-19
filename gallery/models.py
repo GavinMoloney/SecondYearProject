@@ -53,7 +53,7 @@ class Picture(models.Model):
 
 
 class PictureOfTheMonth(models.Model):
-    picture_of_month = models.OneToOneField(Picture, on_delete= models.SET_NULL, null = True)
+    picture_of_month = models.OneToOneField(Picture, on_delete= models.SET_NULL, null = True, related_name='picoftm')
     votes = models.IntegerField(default = 0, blank = True, null = True)
 
     

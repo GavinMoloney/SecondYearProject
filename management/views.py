@@ -39,11 +39,11 @@ class UserDeleteView(DeleteView):
     success_url = reverse_lazy('management:users')
     
 
-class UserCreateView(CreateView):
-    model = CustomUser
-    fields = ('username', 'password', 'first_name', 'last_name', 'email', 'is_staff','can_upload_images','groups',)
-    template_name = 'user_add.html'
-    success_url = reverse_lazy('management:users')
+# class UserCreateView(CreateView):
+#     model = CustomUser
+#     fields = ('username', 'password', 'first_name', 'last_name', 'email', 'is_staff','can_upload_images','groups',)
+#     template_name = 'user_add.html'
+#     success_url = reverse_lazy('management:users')
 
 
 class ProfileListView(ListView):
@@ -236,30 +236,41 @@ class NewsletterCreateView(CreateView):
 class PictureListView(ListView):
     model = Picture
     context_object_name = 'picture_list'
-    template_name = 'newsletters.html'
+    template_name = 'pictures.html'
 
 class PictureDetailView(DetailView):
     model = Picture
-    template_name = 'newsletter_details.html'
+    template_name = 'picture_details.html'
 
 
 class PictureUpdateView(UpdateView):
     model = Picture
-    fields = ('subject', 'contents',)
-    template_name = 'newsletter_edit.html'
-    success_url = reverse_lazy('management:newsletters')
+    fields = ('title', 'location', 'description', 'date_created', 'author', 'total_votes', 'votes_this_month', 'voted_by', 'image',)
+    template_name = 'picture_edit.html'
+    success_url = reverse_lazy('management:pictures')
 
 
 class PictureDeleteView(DeleteView):
     model = Picture
-    template_name = 'newsletter_delete.html'
-    success_url = reverse_lazy('management:newsletters')
+    template_name = 'picture_delete.html'
+    success_url = reverse_lazy('management:pictures')
     
 
 class PictureCreateView(CreateView):
     model = Picture
-    fields = ('subject', 'contents',)
-    template_name = 'newsletter_add.html'
-    success_url = reverse_lazy('management:newsletters')
+    fields = ('title', 'location', 'description', 'date_created', 'author', 'image',)
+    template_name = 'picture_add.html'
+    success_url = reverse_lazy('management:pictures')
 
 
+
+class PictureOfTheMonthListView(ListView):
+    model = PictureOfTheMonth
+    context_object_name = 'picture_of_the_month_list'
+    template_name = 'pictures_of_the_month.html'
+
+
+class PictureOfTheMonthDeleteView(DeleteView):
+    model = PictureOfTheMonth
+    template_name = 'picture_of_the_month_delete.html'
+    success_url = reverse_lazy('management:pictures_of_the_month')

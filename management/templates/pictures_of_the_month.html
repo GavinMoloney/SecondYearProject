@@ -1,0 +1,16 @@
+{% extends "shop_base.html" %}
+{% block content %}
+<div class="container h-100 mt-5">
+    <p>To add new picture to picture of the month <a class="btn btn-link" href="{% url 'gallery_of_the_month_calc' %}">click here</a></p>
+    List of our pictures of the month:
+    {% for pic in picture_of_the_month_list %}
+    <div>       
+       Picture title: {{ pic.picture_of_month.title }} 
+       <a href="{% url 'management:picture_of_the_month_delete' pic.pk %}" class="btn btn-link" >Delete picture</a> 
+    </div>
+    {% endfor%}
+
+    
+</div>
+
+{% endblock content %}
