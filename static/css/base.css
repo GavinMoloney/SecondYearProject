@@ -245,13 +245,13 @@
     cursor: pointer;
 }
 
-.my_contact .button1 {
+.my_contact .button3 {
     color: black; 
     border: rgb(20, 20, 20);
     border-radius: 10px; 
 }
   
-.button1:hover {
+.button3:hover {
     background-color: rgb(5, 144, 5);
     color: white;
 }

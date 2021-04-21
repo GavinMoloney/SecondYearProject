@@ -10,9 +10,11 @@
         <img class="rounded-circle account-img mt-1 mr-5" style = "max-width: 400px; max-height: 400px; " src="{{ user.profile.image.url }}">
         <div class="media-body">
           <h2 class="account-heading"> {{ user.username }}</h2>
-          <h5> Email: {{ user.email }}</h5>
-          <h5>Role:  {{ user.profile.role }}</h5>
-          <h5>Mobile Number: {{ user.profile.mobile }}</h5>
+          <h5 class="fas fa-envelope"> Email: {{ user.email }}</h5>
+          <br>
+          <h5 class="fas fa-user-tag">Role:  {{ user.profile.role }}</h5>
+          <br>
+          <h5 class="fas fa-mobile">Mobile Number: {{ user.profile.mobile }}</h5>
           <h5 > Last Login:  {{user.last_login}}</h5>
         </br>
         <div>
