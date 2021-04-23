@@ -2,6 +2,8 @@ import uuid
 from django.db import models
 from django.urls import reverse
 
+# shop models 
+
 class Category(models.Model):
     id = models.UUIDField(
         primary_key=True,

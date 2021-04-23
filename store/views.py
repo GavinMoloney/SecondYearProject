@@ -3,11 +3,11 @@ from .models import Product, Category
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 
 
-
 def category_detail(request, slug):
     category = get_object_or_404(Category, slug=slug)
     products = category.products.all()
 
+    # pagination added for product category page
     paginator = Paginator(products, 6)
     try:
         page = int(request.GET.get('page', '1'))
@@ -15,7 +15,7 @@ def category_detail(request, slug):
         page = 1
     try:
         products = paginator.page(page)
-    except (EmptyPage,InvalidPage):
+    except:
         products = paginator.page(paginator.num_pages)
 
     context = {

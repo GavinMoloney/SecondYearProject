@@ -40,7 +40,7 @@ def new(request):
     else:
             return render(request, 'newsletter.html', {'form': SubscriberForm()})
 
-
+# user confirm subscription
 def confirm(request):
     sub = Subscriber.objects.get(email=request.GET['email'])
     if sub.conf_num == request.GET['conf_num']:
@@ -50,6 +50,7 @@ def confirm(request):
     else:
         return render(request, 'newsletter.html', {'email': sub.email, 'action': 'denied'})
 
+# user deletes subscription
 def delete(request):
     sub = Subscriber.objects.get(email=request.GET['email'])
     if sub.conf_num == request.GET['conf_num']:
@@ -58,5 +59,6 @@ def delete(request):
     else:
         return render(request, 'newsletter.html', {'email': sub.email, 'action': 'denied'})
 
+# used for terms and conditions page
 def terms(request):
     return render(request, 'terms.html')

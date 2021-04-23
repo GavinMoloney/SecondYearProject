@@ -5,9 +5,11 @@ class Subscriber(models.Model):
     conf_num = models.CharField(max_length=15)
     confirmed = models.BooleanField(default=False)
 
+    # confirm (or not) the subscription (also casts to lower to stop duplication in DB due to different letter cases duplicating)
     def __str__(self):
         return self.email.lower() + " (" + ("not " if not self.confirmed else "") + "confirmed)"
 
+# model for the newsletter (using sendgrid)
 class Newsletter(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
