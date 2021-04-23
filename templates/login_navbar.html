@@ -1,11 +1,5 @@
 {% load static %}
-<!--<script src="{% static 'js/responsive.js' %}"></script>-->
 <nav class="navbar navbar-expand justify-content-center mt-4">
-  <!--<a href="#" class="toggle-button">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </a>-->
   <div class = "container-fluid " >
       <ul class="nav navbar-nav bounce" id="myTopnav">
         <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
@@ -14,12 +8,12 @@
         <li class="nav-item"><a class="hoverable nav-link fas fa-image" href="{% url 'gallery' %}">Gallery</a></li>
         <li class="nav-item"><a class="hoverable nav-link fas fa-phone" href="{% url 'contact' %}">Contact</a></li>
       </ul>
-
-    <ul class="drop_nav navbar-nav bounce navbar-right " >
+  </div>
+    <ul class="drop_nav navbar-nav bounce navbar-right ">
       {% if user.is_authenticated %}
-          <!-- {% if user.profile.image %}
-              <img class="rounded-circle account-img " src="{{ user.profile.image.url }}" style="width: 10%">
-          {% endif %} -->
+          {% if user.profile.image %}
+            <img class="rounded-circle account-img " src="{{ user.profile.image.url }}" style="width: 10%">
+          {% endif %}
           <li class="nav-item dropdown hoverable">
                 <a href="#" class=" nav-link dropdown-toggle " data-toggle="dropdown" 
                 >Welcome, {{ user.username }}</a>
@@ -34,12 +28,11 @@
         </li>
         {% else %}
         <li>
-          <a class="hoverable nav-link " href="{% url 'signin' %}">Sign In <i class="fas fa-sign-in-alt"></i></a>
+          <a class="hoverable nav-link" href="{% url 'signin' %}">Sign In <i class="fas fa-sign-in-alt"></i></a>
         </li>
         {% endif %}
-        <li class="nav-item "><a class="nav-link" href="{% url 'cart:cart_detail' %}"><i class="fas fa-shopping-cart">{{item_count}}</i></a></li>
-      </ul>
-    </div>
+        <li class="nav-item"><a class="nav-link" href="{% url 'cart:cart_detail' %}"><i class="fas fa-shopping-cart">{{item_count}}</i></a></li>
+    </ul>
   </nav>   
   <script>
     function myFunction() {

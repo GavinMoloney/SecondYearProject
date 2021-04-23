@@ -121,14 +121,18 @@
 }
 
 
+
 .transp{
     background-color: transparent; 
 }
+
 
 .nav .icon {
     display: none;
     float: right;
 }
+
+
 
 @media screen and (max-width: 600px) {
     .nav li:not(:first-child) {display: none;}
@@ -433,3 +437,9 @@
 .my_gallery{
     min-height: 100vh;
 }
+
+/* sign up page */
+.my_signup {
+    height: 100vh;
+}
+
