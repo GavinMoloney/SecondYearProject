@@ -9,12 +9,12 @@
         <p>Profile role:  {{ profile.role }} </p>
         <p>Phone number:  {{ profile.mobile }} </p>
         <p>Profile image name:  {{ profile.mobile }} </p>
-        <p>Image:  <img src="{{profile.image.url}}"></p>
-
+        <p>Image:  <img style="width:50%" src="{{profile.image.url}}"></p>
     </div>
     <p> Actions:
-    <p>  <a href="{% url 'management:profile_update' profile.id %}" class="btn btn-link" >Edit profie</a> </p>
-    <p>  <a href="{% url 'management:profile_delete' profile.id %}" class="btn btn-link" >Delete profie</a> </p>
+        <a class="btn btn-link fas fa-long-arrow-alt-left" style="vertical-align:middle" href="{% url 'management:profiles' %}">Back</a>
+        <a href="{% url 'management:profile_update' profile.id %}" class="btn btn-link fas fa-user-edit" >Edit profie</a>
+        <a href="{% url 'management:profile_delete' profile.id %}" class="btn btn-link fas fa-user-times" >Delete profie</a>
     </p>
 </div>
 

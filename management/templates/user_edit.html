@@ -6,8 +6,11 @@
   <h1>Edit</h1>
   <form action="" method="post">{% csrf_token %}
     {{ form.as_p }}
-    <button class="btn btn-info ml-2" type="submit">Update</button>
+    <button class="btn btn-info ml-2 fas fa-long-arrow-alt-left" type="submit" href="{% url 'management:users' %}">Back</button>
+    <button class="btn btn-info ml-2 fas fa-edit" type="submit">Update</button>
   </form>
 </br>
 </div>
 {% endblock content %}
+
+<a class="btn btn-link fas fa-long-arrow-alt-left" style="vertical-align:middle" href="{% url 'management:users' %}">Back</a>

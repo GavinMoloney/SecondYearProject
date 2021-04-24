@@ -11,6 +11,7 @@
         <p>Is staff: {{ customuser.is_staff }} </p>
 
     <p> Actions:
+        <a class="btn btn-link fas fa-long-arrow-alt-left" style="vertical-align:middle" href="{% url 'management:users' %}">Back</a>
        <a href="{% url 'management:user_update' customuser.id %}" class="btn btn-link fas fa-user-edit" >Edit user</a> 
        <a href="{% url 'management:user_delete' customuser.id %}" class="btn btn-link fas fa-user-times" >Delete user</a>
     </p>

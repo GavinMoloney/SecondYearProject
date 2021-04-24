@@ -22,8 +22,9 @@
 
     </div>
     <p> Actions:
-    <p>  <a href="{% url 'management:prod_update' product.slug %}" class="btn btn-link" >Edit product</a> </p>
-    <p>  <a href="{% url 'management:prod_delete' product.slug %}" class="btn btn-link" >Delete product</a> </p>
+        <a class="btn btn-link fas fa-long-arrow-alt-left" style="vertical-align:middle" href="/management/shop_management/products/">Back</a>
+        <a href="{% url 'management:prod_update' product.slug %}" class="btn btn-link fas fa-edit" >Edit product</a> 
+        <a href="{% url 'management:prod_delete' product.slug %}" class="btn btn-link fas fa-trash" >Delete product</a> 
     </p>
 </div>
 

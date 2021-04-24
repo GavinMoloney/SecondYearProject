@@ -1,11 +1,12 @@
 {% extends "shop_base.html" %}
 {% block content %}
 <div class="container h-100 mt-5">
-    <a class="btn btn-link" style="vertical-align:middle" href="{% url 'management:profile_add' %}">Add new user profile</a></p>
+    <a class="btn btn-link fas fa-long-arrow-alt-left" style="vertical-align:middle" href="{% url 'management:management' %}">Back to Console</a>
+    <a class="btn btn-link fas fa-user-edit" style="vertical-align:middle" href="{% url 'management:profile_add' %}">Add new user profile</a></p>
     List of user profiles:
     {% for profile in profile_list %}
     <div>       
-        <a href="{% url 'management:profile_details' profile.id %}">User: {{ profile.user }} Profile ID: {{ profile.id }}</a> 
+        <a  href="{% url 'management:profile_details' profile.id %}">User: {{ profile.user }} Profile ID: {{ profile.id }}</a> 
     </div>
     {% endfor%}
 

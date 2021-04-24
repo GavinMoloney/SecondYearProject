@@ -13,8 +13,9 @@
 
     </div>
     <p> Actions:
-    <p>  <a href="{% url 'management:voucher_update' voucher.id %}" class="btn btn-link" >Edit voucher</a> </p>
-    <p>  <a href="{% url 'management:voucher_delete' voucher.id %}" class="btn btn-link" >Delete voucher</a> </p>
+        <a class="btn btn-link fas fa-long-arrow-alt-left" style="vertical-align:middle" href="{% url 'management:vouchers' %}">Back</a>
+        <a href="{% url 'management:voucher_update' voucher.id %}" class="btn btn-link fas fa-edit" >Edit voucher</a>
+        <a href="{% url 'management:voucher_delete' voucher.id %}" class="btn btn-link fas fa-trash" >Delete voucher</a>
     </p>
 </div>
 

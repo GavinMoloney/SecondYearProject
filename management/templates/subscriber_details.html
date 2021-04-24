@@ -9,8 +9,9 @@
 
     </div>
     <p> Actions:
-    <p>  <a href="{% url 'management:subscriber_update' subscriber.id %}" class="btn btn-link" >Edit subscriber</a> </p>
-    <p>  <a href="{% url 'management:subscriber_delete' subscriber.id %}" class="btn btn-link" >Delete subscriber</a> </p>
+        <a class="btn btn-link fas fa-long-arrow-alt-left" style="vertical-align:middle" href="{% url 'management:subscribers' %}">Back</a>
+        <a href="{% url 'management:subscriber_update' subscriber.id %}" class="btn btn-link fas fa-edit" >Edit subscriber</a>
+        <a href="{% url 'management:subscriber_delete' subscriber.id %}" class="btn btn-link fas fa-trash" >Delete subscriber</a>
     </p>
 </div>
 

@@ -11,8 +11,9 @@
 
     </div>
     <p> Actions:
-    <p>  <a href="{% url 'management:newsletter_update' newsletter.id %}" class="btn btn-link" >Edit newsletter</a> </p>
-    <p>  <a href="{% url 'management:newsletter_delete' newsletter.id %}" class="btn btn-link" >Delete newsletter</a> </p>
+        <a class="btn btn-link fas fa-long-arrow-alt-left" style="vertical-align:middle" href="{% url 'management:newsletters' %}">Back</a>
+      <a href="{% url 'management:newsletter_update' newsletter.id %}" class="btn btn-link fas fa-edit" >Edit newsletter</a> 
+      <a href="{% url 'management:newsletter_delete' newsletter.id %}" class="btn btn-link fas fa-trash" >Delete newsletter</a> 
     </p>
 </div>
 

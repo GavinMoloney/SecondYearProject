@@ -17,8 +17,9 @@
         <p>Image:  <img src="{{picture.image.url}}" alt="{{picture.title}}" style="max-height: 350px;"></p>
         
     <p> Actions:
-        <a href="{% url 'management:picture_update' picture.pk %}" class="btn btn-link" >Edit picture</a> 
-        <a href="{% url 'management:picture_delete' picture.pk %}" class="btn btn-link" >Delete picture</a> 
+        <a class="btn btn-link fas fa-long-arrow-alt-left" style="vertical-align:middle" href="{% url 'management:pictures' %}">Back</a>
+        <a href="{% url 'management:picture_update' picture.pk %}" class="btn btn-link fas fa-edit" >Edit picture</a> 
+        <a href="{% url 'management:picture_delete' picture.pk %}" class="btn btn-link fas fa-trash" >Delete picture</a> 
     </p>
 </div>
 

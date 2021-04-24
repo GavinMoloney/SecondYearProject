@@ -8,8 +8,9 @@
 
     </div>
     <p> Actions:
-    <p>  <a href="{% url 'management:cat_update' category.slug %}" class="btn btn-link" >Edit category</a> </p>
-    <p>  <a href="{% url 'management:cat_delete' category.slug %}" class="btn btn-link" >Delete category</a> </p>
+        <a class="btn btn-link fas fa-long-arrow-alt-left" style="vertical-align:middle" href="/management/shop_management/categories/">Back</a>
+        <a href="{% url 'management:cat_update' category.slug %}" class="btn btn-link fas fa-edit" >Edit category</a> 
+        <a href="{% url 'management:cat_delete' category.slug %}" class="btn btn-link fas fa-trash" >Delete category</a> 
     </p>
 </div>
 

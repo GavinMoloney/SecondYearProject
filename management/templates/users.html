@@ -1,13 +1,15 @@
 {% extends "shop_base.html" %}
 {% block content %}
 <div class="container h-100 mt-5">
-    <a class="btn btn-link" style="vertical-align:middle" href="{% url 'management:user_add' %}">Add user</a></p>
+    <a class="btn btn-link fas fa-long-arrow-alt-left" style="vertical-align:middle" href="{% url 'management:management' %}">Back to Console</a>
+    <a class="btn btn-link fas fa-user-plus" style="vertical-align:middle" href="{% url 'management:user_add' %}">Add user</a></p>
+    
     List of our users:
     <table>
     {% for user in user_list %}   
     <tr>
         <td> 
-            <a href="{% url 'management:user_details' user.pk %}"> {{ user.username }}  {{ user.pk }} </a> 
+            <a class="fas fa-user" href="{% url 'management:user_details' user.pk %}"> {{ user.username }}  {{ user.pk }} </a> 
         </td>
     </tr>  
     {% endfor%}
