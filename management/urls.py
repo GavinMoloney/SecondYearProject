@@ -8,6 +8,7 @@ from .views import SubscriberListView, SubscriberCreateView, SubscriberDeleteVie
 from .views import NewsletterListView, NewsletterCreateView, NewsletterDeleteView, NewsletterDetailView, NewsletterUpdateView
 from .views import PictureListView, PictureCreateView, PictureDeleteView, PictureDetailView, PictureUpdateView
 from .views import PictureOfTheMonthListView, PictureOfTheMonthDeleteView
+from .views import SliderListView, SliderCreateView, SliderDeleteView
 from accounts.views import signupView
 
 
@@ -53,6 +54,10 @@ urlpatterns = [
     path('shop_management/products/product_add', ProductCreateView.as_view(), name = 'prod_add'),
     path('shop_management/products/product_delete/<slug:slug>/', ProductDeleteView.as_view(), name = 'prod_delete'),
     path('shop_management/products/product_update/<slug:slug>/', ProductUpdateView.as_view(), name = 'prod_update'),
+
+    path('shop_management/sliders/', SliderListView.as_view(), name = 'sliders'),
+    path('shop_management/products/slider_add', SliderCreateView.as_view(), name = 'slider_add'),
+    path('shop_management/products/slider_delete/<int:pk>/', SliderDeleteView.as_view(), name = 'slider_delete'),
 
     path('shop_management/vouchers/', VoucherListView.as_view(), name = 'vouchers'),
     path('shop_management/vouchers/<int:pk>/', VoucherDetailView.as_view(), name = 'voucher_details'),

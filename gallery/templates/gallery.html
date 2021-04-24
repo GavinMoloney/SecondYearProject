@@ -1,56 +1,56 @@
-{% extends "base.html" %}
+{% extends "shop_base.html" %}
 {% load static %}
 {% block title %}Gallery{% endblock title %}
 {% block content %}
 
-<div class ="container pt-5 my_height">
-	<div class = "text-white">
+<div class ="container pt-5">
+	<div>	
 		<h1 >Our Gallery</h1>
-        {% if user.is_authenticated %}
-		    <p>Share your magnificent pictures with us <a class="btn btn-link" href="{% url 'gallery_upload' %}">Upload your picture</a></p>
-        </br></br>
-        {% endif %}
+	</br>
+        {% if user.is_authenticated and user.can_upload_images %}
+		    <p><a class="btn btn-link" href="{% url 'gallery_upload' %}">Share your magnificent pictures with us </a></p>
+		{% endif %}
+			<p> <a class="btn btn-link" href="{% url 'gallery_of_the_month' %}">Gallery of top voted pictures each month </a></p>       
 	</div>
 
-	<div class="col-12">
-		<div class="row">
-			{% for picture in Gallery_Pictures %}
-			<div class="col-lg-4 col-md-6 col-12 my-3">
-				<div class = "card text-center h-100 ">
-                    {% if picture.image %}
-					<img class ="card-img-top" src="{{picture.image.url}}" alt="{{picture.title}}">
-                    {% endif %}
-					<div class="card-footer ">
-						<a href="{{picture.get_absolute_url}}" ><h4>{{picture.title}}</h4></a>
-					</div>
-                    <div class="card-footer text-center text-muted">
-                        {% if user.is_authenticated and user.id == picture.author_id %}
-							<a href="{% url 'gallery_edit' picture.pk %}">Edit</a> |
-							<a href="{% url 'gallery_delete' picture.pk %}">Delete</a> 
-                        {% endif %}
-						
-						{% if user.is_authenticated %}		
-							{% if user in picture.voted_by.all %}
-							<form method="POST" action ="{% url 'down_vote' picture.pk %}">
-								<button type="submit" class="btn btn-secondary">Vote down 👎
-									
-								</button>
+	<div class="row">
+		{% for picture in Gallery_Pictures %}
+		<div class="col-lg-4 col-md-6 col-12 my-3">
+			<div class = "card text-center h-100 ">
+				{% if picture.image %}
+				<img class ="card-img-top" src="{{picture.image.url}}" alt="{{picture.title}}">
+				{% endif %}
+				<div class="card-footer mt-auto">
+					<a href="{{picture.get_absolute_url}}" ><h4>{{picture.title}}</h4></a>
+				</div>
+				<div class="card-footer text-center text-muted ">
+					{% if user.is_authenticated and user.id == picture.author_id or user.is_authenticated and user.is_superuser %}
+						<a href="{% url 'gallery_edit' picture.pk %}">Edit</a> |
+						<a href="{% url 'gallery_delete' picture.pk %}">Delete</a> 
+					{% endif %}
+					<p>
+					{% if user.is_authenticated %}		
+						{% if user in picture.voted_by.all %}
+						<form method="POST" action ="{% url 'down_vote' picture.pk %}">
+							<button type="submit" class="btn btn-secondary">Vote down 👎
+								
+							</button>
+							{% csrf_token %}
+						</form>	
+						{% else %}									
+							<form method="POST" action ="{% url 'up_vote' picture.pk %}">									
+								<button type="submit" class="btn btn-secondary">Vote up 👍</button>
 								{% csrf_token %}
 							</form>	
-							{% else %}									
-								<form method="POST" action ="{% url 'up_vote' picture.pk %}">									
-									<button type="submit" class="btn btn-secondary">Vote up 👍</button>
-									{% csrf_token %}
-								</form>	
-								
-							{% endif %}	
-							Total votes: {{ picture.total_votes}}
-						{% endif %}		
-                    </div>
+						</p>
+						{% endif %}	
+						Total votes: {{ picture.total_votes}}
+					{% endif %}		
 				</div>
 			</div>
-			{% endfor %} 
 		</div>
+		{% endfor %} 
 	</div>
+	
 </div>
 {% endblock %}

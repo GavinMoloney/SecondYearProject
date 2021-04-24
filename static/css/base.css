@@ -92,6 +92,10 @@
     text-decoration: none;
 }
 
+.navbar{
+    position: relative;
+    z-index: 10 !important; 
+}
 
 .nav {
     background: none !important;
@@ -195,9 +199,11 @@
 
 /* COOKIE LAW*/
 #CookielawBanner {
-    background: #fff;
+    /* background: #fff; */
     padding: 15px 0;
-    color: black;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #CookielawBanner .cookies {
@@ -409,41 +415,25 @@
     height: 100vh;
     color: white;
 }
-/* order page height */
-.my_order{
-    height: 100vh;
-}
+
 
 /* order detail */
 .my_print{
     text-align: center;
     background-color: rgb(165, 165, 165);
 }
-/* cart page */
-.my_cart{
-    height: 100vh;
-}
 
-/* product_detail */
-.my_product {
-    height: 100vh;
-}
 /* Shop */
 .my_shop h1{
     text-align: center;
 }
 
-/* Gallery */
-.my_gallery{
-    min-height: 100vh;
+
+/* slider */
+.carousel-control-next-icon, .carousel-control-prev-icon {
+     filter: invert(1); 
 }
 
-/* sign up page */
-.my_signup {
-    height: 100vh;
-}
-
-
-.my_height{
-    height: 100vh;
+.carousel-indicators{
+    filter: invert(1);  
 }

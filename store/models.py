@@ -55,6 +55,16 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-            
-    # def get_absolute_url(self):
-    #         return reverse('shop:prod_detail', args=[self.category.id, self.id])
+
+
+class Slider(models.Model):
+    slide = models.ForeignKey(Product, related_name ='slide', on_delete=models.SET_NULL, null=True)
+
+
+
+
+
+
+
+
+

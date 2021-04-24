@@ -5,7 +5,7 @@ from django.urls import reverse_lazy, reverse
 from django.shortcuts import render, redirect
 
 from accounts.models import CustomUser, Profile
-from store.models import Category, Product
+from store.models import Category, Product, Slider
 from voucher.models import Voucher
 from newsletter.models import Subscriber, Newsletter
 from gallery.models import Picture, PictureOfTheMonth
@@ -274,3 +274,39 @@ class PictureOfTheMonthDeleteView(DeleteView):
     model = PictureOfTheMonth
     template_name = 'picture_of_the_month_delete.html'
     success_url = reverse_lazy('management:pictures_of_the_month')
+
+
+class SliderListView(ListView):
+    model = Slider
+    context_object_name = 'slider_list'
+    template_name = 'sliders.html'
+
+
+class SliderDeleteView(DeleteView):
+    model = Slider
+    template_name = 'slider_delete.html'
+    success_url = reverse_lazy('management:sliders')
+    
+
+class SliderCreateView(CreateView):
+    model = Slider
+    fields = ('slide',)
+    template_name = 'slider_add.html'
+    success_url = reverse_lazy('management:sliders')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

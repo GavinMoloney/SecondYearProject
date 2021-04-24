@@ -1,14 +1,14 @@
 {% load static %}
-<nav class="navbar navbar-expand justify-content-center mt-4">
-  <div class = "container-fluid " >
+<nav class="navbar navbar-expand justify-content-center mt-4 mb-5">
+  <div class = "container-fluid">
       <ul class="nav navbar-nav bounce" id="myTopnav">
         <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
-        <li class="nav-item"><a class="hoverable nav-link fas fa-home" href="{% url 'home' %}">Home</a></li>
-        <li class="nav-item"><a class="hoverable nav-link fab fa-shopify" href="{% url 'shop' %}">Shop</a></li>
-        <li class="nav-item"><a class="hoverable nav-link fas fa-image" href="{% url 'gallery' %}">Gallery</a></li>
-        <li class="nav-item"><a class="hoverable nav-link fas fa-phone" href="{% url 'contact' %}">Contact</a></li>
+        <li class="nav-item"><a class="hoverable nav-link fas fa-home" href="{% url 'home' %}"> Home</a></li>
+        <li class="nav-item"><a class="hoverable nav-link fab fa-shopify" href="{% url 'shop' %}"> Shop</a></li>
+        <li class="nav-item"><a class="hoverable nav-link fas fa-image" href="{% url 'gallery' %}"> Gallery</a></li>
+        <li class="nav-item"><a class="hoverable nav-link fas fa-phone" href="{% url 'contact' %}"> Contact</a></li>
       </ul>
-  </div>
+
     <ul class="drop_nav navbar-nav bounce navbar-right ">
       {% if user.is_authenticated %}
           {% if user.profile.image %}
@@ -18,12 +18,12 @@
                 <a href="#" class=" nav-link dropdown-toggle " data-toggle="dropdown" 
                 >Welcome, {{ user.username }}</a>
           <div class="dropdown-menu">
-            <a class="hoverable nav-link" href = "{% url 'profile' %}" class = "dropdown-item">Profile</a>
-            <a class="hoverable nav-link" href = "{% url 'order:order_history' %}" class = "dropdown-item">Order History</a>    
-            <a class="hoverable nav-link" href="{% url 'signout' %}">Sign Out <i class="fas fa-sign-out-alt"></i></a>  
+            <a class="hoverable nav-link" href ="{% url 'profile' %}" class = "dropdown-item">Profile</a>
+            <a class="hoverable nav-link" href ="{% url 'order:order_history' %}" class = "dropdown-item">Order History</a>    
             {% if user.is_staff %}
             <a class="hoverable nav-link" href="{% url 'management:management' %}">Console</a>  
             {% endif %}
+            <a class="hoverable nav-link" href="{% url 'signout' %}">Sign Out <i class="fas fa-sign-out-alt"></i></a>  
           </div>
         </li>
         {% else %}
@@ -33,6 +33,7 @@
         {% endif %}
         <li class="nav-item"><a class="nav-link" href="{% url 'cart:cart_detail' %}"><i class="fas fa-shopping-cart">{{item_count}}</i></a></li>
     </ul>
+  </div>
   </nav>   
   <script>
     function myFunction() {

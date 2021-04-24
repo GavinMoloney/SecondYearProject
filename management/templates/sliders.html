@@ -1,0 +1,18 @@
+{% extends "shop_base.html" %}
+{% block title %}Management - sliders{% endblock title %}
+{% block content %}
+<div class="container h-100 mt-5">
+    <a class="btn btn-link fas fa-long-arrow-alt-left" style="vertical-align:middle" href="{% url 'management:management' %}">Back to Console</a>
+    <a class="btn btn-link fas fa-plus" style="vertical-align:middle" href="{% url 'management:slider_add' %}">Add slider</a></p>
+    List of our slides:
+    {% for slide in slider_list %}
+    <div>       
+        Name: {{ slide.slide.name }} </a> 
+        <a href="{% url 'management:slider_delete' slide.id %}" class="btn btn-link fas fa-trash" >Delete slider</a>
+    </div>
+    {% endfor%}
+
+    
+</div>
+
+{% endblock content %}

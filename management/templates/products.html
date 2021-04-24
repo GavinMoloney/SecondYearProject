@@ -1,4 +1,5 @@
 {% extends "shop_base.html" %}
+{% block title %}Management - products{% endblock title %}
 {% block content %}
 <div class="container h-100 mt-5">
     <a class="btn btn-link fas fa-long-arrow-alt-left" style="vertical-align:middle" href="{% url 'management:management' %}">Back to Console</a>
@@ -6,7 +7,7 @@
     List of our products:
     {% for prod in product_list %}
     <div>       
-        <a href="{% url 'management:prod_details' prod.slug %}">Name: {{ prod.name }} ID:{{ prod.slug }} </a> 
+        <a href="{% url 'management:prod_details' prod.slug %}">Name: {{ prod.name }} </a> 
     </div>
     {% endfor%}
 

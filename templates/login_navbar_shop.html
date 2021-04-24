@@ -1,25 +1,28 @@
 {% load static %}
-<nav class="navbar navbar-expand-sm justify-content-center mt-4">
-    <div class = "container-fluid bg-white">
-      <ul class="nav navbar-nav bounce">
-        <li class="nav-item"><a class="hoverable nav-link text-dark fas fa-home" href="{% url 'home' %}">Home</a></li>
-        <li class="nav-item"><a class="hoverable nav-link text-dark fab fa-shopify" href="{% url 'shop' %}">Shop</a></li>
-        <li class="nav-item"><a class="hoverable nav-link text-dark fas fa-image" href="{% url 'gallery' %}">Gallery</a></li>
-        <li class="nav-item"><a class="hoverable nav-link text-dark fas fa-phone" href="{% url 'contact' %}">Contact</a></li>
-      </ul>
-      
-      <ul class="nav navbar-nav bounce navbar-right mr-5">
-        
-        {% if user.is_authenticated %}
+<nav class="navbar navbar-expand justify-content-center mt-4 mb-5">
+  <div class = "container-fluid bg-white">
+    <ul class="nav navbar-nav bounce">
+      <li class="nav-item"><a class="hoverable nav-link text-dark fas fa-home" href="{% url 'home' %}"> Home</a></li>
+      <li class="nav-item"><a class="hoverable nav-link text-dark fab fa-shopify" href="{% url 'shop' %}"> Shop</a></li>
+      <li class="nav-item"><a class="hoverable nav-link text-dark fas fa-image" href="{% url 'gallery' %}"> Gallery</a></li>
+      <li class="nav-item"><a class="hoverable nav-link text-dark fas fa-phone" href="{% url 'contact' %}"> Contact</a></li>
+    </ul>
+
+    <ul class="drop_nav navbar-nav bounce navbar-right ">
+      {% if user.is_authenticated %}
+          {% if user.profile.image %}
+            <img class="rounded-circle account-img " src="{{ user.profile.image.url }}" style="width: 10%">
+          {% endif %}
           <li class="nav-item dropdown hoverable">
-                <a href="#" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" 
-                >Welcome, {{ user.username }}</a> 
+            <a href="#" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" 
+            >Welcome, {{ user.username }}</a> 
           <div class="dropdown-menu">
-            <a class="hoverable nav-link text-dark" href = "{% url 'order:order_history' %}" class = "dropdown-item">Order History</a>   
-            <a class="hoverable nav-link text-dark" href="{% url 'signout' %}">Sign Out <i class="fas fa-sign-out-alt"></i></a>    
+            <a class="hoverable nav-link text-dark" href ="{% url 'profile' %}" class = "dropdown-item">Profile</a>
+            <a class="hoverable nav-link text-dark" href = "{% url 'order:order_history' %}" class = "dropdown-item">Order History</a>              
             {% if user.is_staff %}
             <a class="hoverable nav-link text-dark" href="{% url 'management:management' %}">Console</a>  
-            {% endif %}            
+            {% endif %}      
+            <a class="hoverable nav-link text-dark" href="{% url 'signout' %}">Sign Out <i class="fas fa-sign-out-alt"></i></a>          
           </div>
         </li>
         {% else %}
@@ -29,6 +32,16 @@
         {% endif %}
         <li class="nav-item"><a class="nav-link text-dark" href="{% url 'cart:cart_detail' %}"><i class="fas fa-shopping-cart"></i>{{item_count}}</a></li>
       </ul>
+  </div>
+  </nav>   
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "nav") {
+        x.className += " responsive";
+      } else {
+        x.className = "nav";
+      }
+    }
 
-    </div>
-  </nav>    
+    </script> 

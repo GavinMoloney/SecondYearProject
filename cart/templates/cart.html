@@ -8,7 +8,7 @@
 {% endblock %}
 {% block content %}
 	{% if not cart_items %}
-	<div class ="container pt-5 my_cart">
+	<div class ="container pt-5 h-100">
 			<div class="text-center">
 				<br>
 				<h1 class="text-center">
@@ -30,7 +30,7 @@
 				<br>
 			</div>
 		</div>
-		<div class="row mx-auto my_cart">
+		<div class="row mx-auto">
 			<div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
 				<table class="table">
 					<thead class="my_custom_thead">
@@ -140,7 +140,7 @@
 							<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 						 data-key="{{ data_key }}"
 								 data-amount="{{ stripe_total }}"
-								 data-name="Astronomy Shop"
+								 data-name=" AstroView Shop"
 								 data-description="{{ description }}"
 								 data-image="{% static 'images/icon.png' %}"
 								 data-locale="auto"

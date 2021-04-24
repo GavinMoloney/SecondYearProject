@@ -6,7 +6,7 @@
     List of our pictures:
     {% for pic in picture_list %}
     <div>       
-        <a href="{% url 'management:picture_details' pic.pk %}">Picture title: {{ pic.title }} ID: {{ pic.id }} </a> 
+        <a href="{% url 'management:picture_details' pic.pk %}">Picture title: {{ pic.title }} </a> 
     </div>
     {% endfor%}
 

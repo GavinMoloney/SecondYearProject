@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from store.models import Category
+from store.models import Category, Slider
 from django.shortcuts import render
 
 
@@ -19,9 +19,10 @@ class ManagementView(TemplateView):
 
 def shop_page(request):
     categories = Category.objects.all()
-
+    slides = Slider.objects.all()
     context = {
         'categories': categories,
+        'slides': slides
         }
 
     return render(request, 'shop.html', context)

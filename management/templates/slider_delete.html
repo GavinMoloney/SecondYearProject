@@ -1,0 +1,13 @@
+{% extends "shop_base.html" %}
+{% block title %}Delete Slider{% endblock title %}
+{% block content %}
+<div class="container h-100 mt-5">
+</br>
+  <h1>Delete slider</h1>
+  <form action="" method="post">{% csrf_token %}
+    <p>Are you sure you want to delete "{{ slide.name }}"?</p>
+    <button class="btn btn-danger ml-2 fas fa-trash" type="submit">Confirm</button>
+  </form>
+</br>
+</div>
+{% endblock content %}
