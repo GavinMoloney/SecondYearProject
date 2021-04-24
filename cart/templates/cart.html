@@ -21,8 +21,8 @@
 			</div>
 		</div>
 	{% else %}
-		<div>
-			<div class="text-center">
+		<div >
+			<div class="text-center ">
 				<br>
 				<h1 class="text-center">
 					Your shopping cart
@@ -30,7 +30,7 @@
 				<br>
 			</div>
 		</div>
-		<div class="row mx-auto">
+		<div class="row mx-auto container-fluid h-100">
 			<div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
 				<table class="table">
 					<thead class="my_custom_thead">
@@ -68,7 +68,7 @@
 										&nbsp;<a href="{% url 'cart:cart_remove' cart_item.product.id %}" class="custom_a"><i class="fas fa-minus-circle custom_icon"></i></a>&nbsp;
 										<a href="{% url 'cart:full_remove' cart_item.product.id %}" class="custom_icon"><i class="fas fa-trash-alt custom_icon"></i></a>
 									</td>
-									<td></td>
+									
 								{% endif %}
 							</tr>
 						{% endfor %}
