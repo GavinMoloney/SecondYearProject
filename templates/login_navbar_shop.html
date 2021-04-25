@@ -11,7 +11,7 @@
     <ul class="drop_nav navbar-nav bounce navbar-right ">
       {% if user.is_authenticated %}
           <li class="nav-item dropdown hoverable">
-            <a href="#" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" 
+            <a href="#" class="nav-link dropdown-toggle text-dark fas fa-door-open" data-toggle="dropdown" 
             >Welcome, {{ user.username }}</a> 
           <div class="dropdown-menu">
             <a class="hoverable nav-link  text-dark" href ="{% url 'profile' %}" class = "dropdown-item">Profile {% if user.profile.image %}
