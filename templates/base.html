@@ -1,4 +1,4 @@
-{% load cookielaw_tags %}
+<!-- {% load cookielaw_tags %} -->
 {% load static %}
 <html>
     <head>
@@ -16,7 +16,7 @@
     </head>
     <body class="home-image">
       {% load i18n static%}
-      <script src="{% static 'js/cookielaw.js' %}"></script>
+      <!-- <script src="{% static 'js/cookielaw.js' %}"></script>
       <div id="CookielawBanner">
           <div class="cookies text-white">
               <h6>{% trans "COOKIE_INFO_HEADER" %}</h6>
@@ -25,12 +25,12 @@
                   {% trans "COOKIE_INFO_PARA" %}
               </p>
           </div>
-      </div>
+      </div> -->
 
         <header>
           {% include 'login_navbar.html' %}    
         </header>
-        {% cookielaw_banner %}
+        <!-- {% cookielaw_banner %} -->
         <div>
             {% include 'messages.html' %}
             {% block content %}
@@ -55,13 +55,13 @@
 <!-- Cookies law popup start-->
 
 
-<script type="application/javascript">
+<!-- <script type="application/javascript">
     $(document).ready(function () {
        $('.close-cookies').click(function () {
            $(this).parent().hide();
        });
     });
-</script>
+</script> -->
 <!-- Cookies law popup end--> 
   </body>
   <div class = "footer text-center">
