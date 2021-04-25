@@ -18,10 +18,27 @@
 		<div class="col-lg-4 col-md-6 col-12 my-3">
 			<div class = "card text-center h-100 ">
 				{% if picture.image %}
-				<img class ="card-img-top" src="{{picture.image.url}}" alt="{{picture.title}}">
+				<div class="flip-card">
+					<div class="flip-card-inner">
+						<div class="flip-card-front">
+							<img class ="card-img-top h-100" src="{{picture.image.url}}" alt="{{picture.title}}">
+						</div>
+						<div class="flip-card-back" style = "background: url({{picture.image.url}}) no-repeat center center;
+						background-size: cover;">
+							<div>
+								<h1>{{picture.title}}</h1>
+								<p>{{picture.description}}</p>
+								<p>Author: {{picture.author}}</p>
+								<p>Date taken: {{picture.date_created}}</p>
+								<p>Location: {{picture.location}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
 				{% endif %}
 				<div class="card-footer mt-auto">
-					<a href="{{picture.get_absolute_url}}" ><h4>{{picture.title}}</h4></a>
+					<!-- <a href="{{picture.get_absolute_url}}" ><h4>{{picture.title}}</h4></a> -->
+					<h4>{{picture.title}}</h4>
 				</div>
 				<div class="card-footer text-center text-muted ">
 					{% if user.is_authenticated and user.id == picture.author_id or user.is_authenticated and user.is_superuser %}

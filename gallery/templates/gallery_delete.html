@@ -1,11 +1,13 @@
-{% extends 'base.html' %}
+{% extends 'shop_base.html' %}
 {% block title %}Gallery - Delete your picture{% endblock title %}
 {% block content %}
+<div class = "container h-100">
 </br>
-  <h1 class = "text-white">Delete</h1>
-  <form class = text-white action="" method="post">{% csrf_token %}
-    <p>Are you sure you want to delete "{{ UserSkyPicture.title }}"?</p>
+  <h1 >Delete</h1>
+  <form action="" method="post">{% csrf_token %}
+    <p>Are you sure you want to delete "{{ picture.title }}"?</p>
     <button class="btn btn-danger ml-2" type="submit">Confirm</button>
   </form>
 </br>
+</div>
 {% endblock content %}
