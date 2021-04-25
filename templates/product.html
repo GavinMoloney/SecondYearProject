@@ -30,7 +30,7 @@
 						{% if product.stock == 0%}
 						<p><b>Out of Stock</b></p>
 						{% else %}
-						<a class="btn btn-secondary" href="{% url 'cart:add_cart' product.id %}">Add to Cart</a>
+						<a class="btn btn-primary fas fa-cart-plus" href="{% url 'cart:add_cart' product.id %}">  Add to Cart</a>
 						{% endif %}
 					</div>
 					<div class = "col-3">
