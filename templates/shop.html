@@ -8,7 +8,7 @@
 		<h1>Our Products Collection</h1>
 
 		<div id="carouselExampleIndicators" class="carousel slide py-2 mt-2 mb-5 zindex-tooltip" data-ride="carousel">
-			<ol class="carousel-indicators">
+			<!-- <ol class="carousel-indicators">
 				{% for obj in slides %}
 					{% if forloop.first %}
 						<li data-target="#carouselExampleIndicators" data-slide-to="{{forloop.counter0}}" class="active"></li>
@@ -17,21 +17,19 @@
 					{% endif %}
 				{% endfor %}
 			  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-			</ol>
+			</ol> -->
 			<div class="carousel-inner bg-light">
 				{% for obj in slides %}
 					{% if forloop.first %}
 					<div class="carousel-item active">
 					{% else %}
 					<div class="carousel-item">
-					{% endif %}										
-					<img class="d-block w-50 h-50 mx-auto" class="h-50 d-inline-block" src="{{ obj.slide.image.url }}" alt="{{obj.slide.name}}">					
-					</div>
-		
+					{% endif %}	<p class = "text-center pt-1">{{obj.slide.name}}</p>
+					<a href="{% url 'store:product_detail' obj.slide.category.slug obj.slide.slug %}">
+						<img class="d-block w-50 h-50 mx-auto pb-2" class="h-50 d-inline-block" src="{{ obj.slide.image.url }}" alt="{{obj.slide.name}}"></a>													
+					</div>							
 				{% endfor %}
 				</div>
-				{{ obj.slide.name }}
-				{{ obj.slide.description }}
 			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 			  <span class="sr-only">Previous</span>

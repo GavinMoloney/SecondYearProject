@@ -460,8 +460,6 @@
 }
 
 /*home text */
-
-
 .text1{
     font-size: 60px;
     font-weight: 700;
@@ -474,7 +472,6 @@
 .text2{
     font-size: 30px;
     color: #e6e8f1;
-
 }
 
 @keyframes text{
@@ -494,12 +491,12 @@
 
 
 
-/* Gallery flip cards*/
+/* Gallery flip cards - from w3schools */
 .flip-card {
     background-color: transparent;
     width: 350px;
     height: 300px;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    perspective: 1000px; 
   }
   
   /* This container is needed to position the front and back side */

@@ -5,21 +5,16 @@
 
 <div class ="container pt-5 h-100">
 	<div>
-		<h1 >Our Gallery</h1>
-        {% if user.is_authenticated %}
-		
-        </br></br>
-        {% endif %}
+		<h1 >Our Gallery of most voted pictures</h1>
 	</div>    	
 
 	<div class="row">
 		{% for picture in Pictures_of_the_month %}
 		<div class="col-lg-4 col-md-6 col-12 my-3">
 			<div class = "card text-center h-100 ">
-				<img class ="card-img-top" src="{{picture.picture_of_month.image.url}}" alt="{{picture.picture_of_month.title}}">
-				
-				<div class="card-footer ">
-					<a href="{{picture.picture_of_month.get_absolute_url}}" ><h4>{{picture.picture_of_month.title}}</h4></a>
+				<img class ="card-img-top" src="{{picture.picture_of_month.image.url}}" alt="{{picture.picture_of_month.title}}">				
+				<div class="card-footer">
+					{{picture.picture_of_month.title}}</h4>
 				</div>				
 			</div>
 		</div>
