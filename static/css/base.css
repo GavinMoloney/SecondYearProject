@@ -516,3 +516,9 @@
       height: 100vh;
       margin-left: 40px;
   }
+
+
+
+  html, body {
+    height: 100%;
+  }
