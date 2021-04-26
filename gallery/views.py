@@ -30,7 +30,7 @@ def pic_of_the_month_gallery_view(request):
 
 class GalleryUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Picture
-    fields = ('title', 'location', 'description', 'date_created', 'image')
+    fields = ('title', 'location', 'description', 'image')
     template_name = 'gallery_edit.html'
 
 
@@ -55,7 +55,7 @@ class GalleryDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 class GalleryCreateView(LoginRequiredMixin, CreateView):
     model = Picture
-    fields = ('title', 'location', 'description', 'date_created', 'image')
+    fields = ('title', 'location', 'description', 'image')
     template_name = 'gallery_upload.html'
 
     def form_valid(self, form):

@@ -13,7 +13,7 @@ class Picture(models.Model):
     title = models.CharField(max_length=50)
     location = models.CharField(max_length=50, blank = True)
     description = models.TextField(max_length=100, blank = True)
-    date_created = models.DateTimeField()
+    date_created = models.DateTimeField(blank = True, null = True)
     image = models.ImageField(upload_to = 'gallery')
     author = models.ForeignKey(get_user_model(), on_delete = models.CASCADE,)
     total_votes = models.IntegerField(default = 0, blank = True, null = True)

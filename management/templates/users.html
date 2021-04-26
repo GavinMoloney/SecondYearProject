@@ -9,7 +9,7 @@
     {% for user in user_list %}   
     <tr>
         <td> 
-            <a class="fas fa-user" href="{% url 'management:user_details' user.pk %}"> {{ user.username }}  {{ user.pk }} </a> 
+            <a class="fas fa-user" href="{% url 'management:user_details' user.pk %}"> Username: {{ user.username }}  ID:  {{ user.pk }} </a> 
         </td>
     </tr>  
     {% endfor%}
