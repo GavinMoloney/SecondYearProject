@@ -529,3 +529,9 @@
     color: white;
     transform: rotateY(180deg);
   }
+
+  .my_pass_confirm{
+      color: white;
+      height: 100vh;
+      margin-left: 40px;
+  }
