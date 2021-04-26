@@ -1,4 +1,7 @@
 from django.db import models
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Email, Content, Mail
+from django.conf import settings
 
 class Subscriber(models.Model):
     email = models.EmailField(unique=True)
