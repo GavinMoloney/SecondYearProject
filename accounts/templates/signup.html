@@ -5,27 +5,27 @@
 	Create a New Account 
 {% endblock %}
 {% block content %}
-	<div class="container text-white my_signup">
+	<div class="container h-100 text-white my_signup">
 		{% if not form.is_valid %}
-			<div class="mx-auto text-white">
+			<div class="mx-auto">
 				<br>
-				<h1 class="my_title text-center">Create a new account</h1>
+				<h1 class="text-center">Create a new account</h1>
 				<br>
-				<div class="col-9 col-sm-9 col-md-6 col-lg-5 mx-auto text-white">
+				<div class="col-9 col-sm-9 col-md-6 col-lg-5 mx-auto">
 					<br>
 					<p>Enter the following information to create a new account.</p>
 					<form method="post">
 						<p class = "text-white">{{ form | crispy }}</p>
 						{% csrf_token %}
-						<button type="submit" class="btn btn-secondary">Register Account</button>
+						<button type="submit" class="btn btn-primary">Register Account</button>
 					</form>
 					<br>
 				</div>
 			</div>
 		{% else %}
-			<div class="mx-auto h-100">
+			<div class="container h-100">
 				<br>
-				<h1 class="my_title text-center">Your account has been successfully created</h1>
+				<h1 class="text-center">Your account has been successfully created</h1>
 				<br>
 				<div>
 					<p>
@@ -38,7 +38,6 @@
 					</p>
 				</div>
 			</div>
-
 		{% endif %}
 	</div>
 	<br>

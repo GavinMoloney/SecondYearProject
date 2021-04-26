@@ -5,7 +5,7 @@
 {% load static %}
 <!--<link rel="stylesheet" type="text/css" href="{% static 'css/base1.css' %}">-->
 
-    <div class=" container content-section my_profile">
+    <div class=" container h-100 content-section my_profile">
       <div class="media">
         <img class="rounded-circle account-img mt-1 mr-5" style = "max-width: 400px; max-height: 400px; " src="{{ user.profile.image.url }}">
         <div class="media-body">
@@ -19,7 +19,7 @@
         </br>
         <div>
           <a class="btn button2" style="vertical-align:middle" href="{% url 'update_profile' %}" type="submit"><span>Update Your Profile</span></a>
-          <a class="btn button2" style="vertical-align:middle" href="{% url 'password_change' %}" type="submit"><span>password change</span></a>
+          <a class="btn button2" style="vertical-align:middle" href="{% url 'password_change' %}" type="submit"><span>Password change</span></a>
         </div>
       </div>
       </div>
